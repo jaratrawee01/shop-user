@@ -84,7 +84,7 @@ function functionCopy(e) {
         let text = `<span style="color: white">คัดลอก</span>`;
         document.getElementById(e).innerHTML = text;
     }, 1000); 
-   
+   /* zz */
 }
 
 
