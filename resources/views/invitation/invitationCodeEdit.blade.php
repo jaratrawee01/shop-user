@@ -15,13 +15,14 @@
 <br>
 <div class="margin-user">
     <div class="border-th">
-        <form class="row g-3"  method="POST" action="{{ ('save-code') }}">
+        <form class="row g-3"  method="post" action="{{route('edit-code.update',$user->id)}}">
+            @method('PUT')
             @csrf
             <div class="col-auto col-md-2">
               <label for="staticEmail2" class="text-code">รหัสเชิญ</label>
             </div>
             <div class="col-6  col-md-8">
-              <input type="text" class="form-control @error('code') is-invalid @enderror" id="inputCode" value="" name="code" placeholder="กรอกรหัสคำเชิญ">
+              <input type="text" class="form-control @error('code') is-invalid @enderror" id="inputCode" value="{{$user->code}}" name="code" placeholder="กรอกรหัสคำเชิญ">
               @error('code')
                 <span class="invalid-feedback" role="alert">
                     <strong style="font-size: 16px" class="text">กรุณากรอกรหัสคำเชิญ</strong>
@@ -37,7 +38,12 @@
             </div>
             <div class="col-6 col-md-10">
                 <div class="form-check form-switch"  style="font-size: 30px">
-                    <input class="form-check-input"  name="status" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
+                    @if ($user->status === "on")
+                      <input class="form-check-input"  name="status" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
+                    @else
+                      <input class="form-check-input"  name="status" type="checkbox" role="switch" id="flexSwitchCheckChecked">
+                    @endif
+
                     <label class="text-code" for="flexSwitchCheckChecked" id="textSwitch">เปิดใช้งาน</label>
                 </div>
               </div>
@@ -46,8 +52,13 @@
               </div>
               <div class="col-6 col-md-10">
                 <select class="form-select" name="enrol" aria-label="Default select example">
-                    <option value="เริ่มต้น"> การลงทะเบียนเริ่มต้น</option>
-                    <option value="ทางการ">เเพลตฟอร์อย่างเป็นทางการ</option>
+                    @if ($user->enrol == "เริ่มต้น")
+                      <option value="เริ่มต้น" selected> การลงทะเบียนเริ่มต้น</option>
+                      <option value="ทางการ">เเพลตฟอร์อย่างเป็นทางการ</option>
+                    @else
+                      <option value="เริ่มต้น"> การลงทะเบียนเริ่มต้น</option>
+                      <option value="ทางการ" selected>เเพลตฟอร์อย่างเป็นทางการ</option>
+                    @endif
                   </select>
               </div>
               <div class="col-auto col-md-2">
@@ -55,6 +66,7 @@
               </div>
               <div class="col-6 col-md-10">
                 <select class="form-select" name="percent" aria-label="Default select example">
+                    <option value="{{$user->percent}}" selected>{{$user->percent}}</option>
                     <option value="0% (900)">0% (900)</option>
                     <option value="0.1% (901)">0.1% (901)</option>
                     <option value="0.2% (902)">0.1% (902)</option>
@@ -159,7 +171,7 @@
                   </select>
               </div>
               <div class="logo-center">
-                <button type="submit" class="btn btn-outline-light">สร้างรหัสเชิญ</button>
+                <button type="submit" class="btn btn-outline-light">บันทึก</button>
               </div>
         </form>
         <br>

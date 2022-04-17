@@ -6,11 +6,10 @@
         <a href="{{ URL::to('index')}}">
             <i class="fa-solid fa-grid-2-plus"></i>
             <i class="fa-solid fa-arrow-left" style='font-size:28px'></i>
-            
         </a>
     </div>
     <div class="set-add">
-        <a href="{{ URL::to('index')}}">
+        <a href="{{ URL::to('createCode')}}">
             <i class="fas fa-plus set text"  style='font-size:28px'></i>
         </a>
     </div>
@@ -29,38 +28,33 @@
             </tr>
           </thead>
         <tbody>
-          <tr class="onClickBtn">
-              <div></div>
-            <td class="col-3 col-sm-3 col-md-3 ">
-                466243459  <span  onclick="functionCopy(466243459)" id="466243459" class="tooltiptext">คัดลอก</span>
-            </td>
-            <td class="col-3 col-sm-3 col-md-3 " >
-                9.9(999)
-            </td>
-            <td class="col-3 col-sm-3 col-md-3 " >
-                เปิดใช้งาน
-            </td>
-            <td class="col-3 col-sm-3 col-md-3" >
-                <button type="button" class="btn btn-success">เเก้ไข</button>
-            </td>
-          </tr>
-          <tr>
-            <td class="col-3 col-sm-3 col-md-3">
-                566243459  <span onclick="functionCopy(566243459)" id="566243459" >คัดลอก</span>
-            </td>
-            <td class="col-3 col-sm-3 col-md-3 " >
-                9.9(999)
-            </td>
-            <td class="col-3 col-sm-3 col-md-3 " >
-                เปิดใช้งาน
-            </td>
-            <td class="col-3 col-sm-3 col-md-3" >
-                <button type="button" class="btn btn-success">เเก้ไข</button>
-            </td>
-          </tr>
+            @foreach ($users as $user)
+                <tr class="onClickBtn">
+                    <td class="col-3 col-sm-3 col-md-3" >
+                        {{ $user->code }} 
+                        <span class="tooltiptext" id="{{$user->code}}" onclick="functionCopy({{$user->code}})">คัดลอก</span>
+                    </td>
+                    <td class="col-3 col-sm-3 col-md-3">
+                        {{ $user->percent }}
+                        <span> {{ $user->enrol }}</span>
+                    </td>
+                    <td class="col-3 col-sm-3 col-md-3 ">
+                        @if ($user->status == 'on')
+                            <p onclick="myFunction()">เปิดการใช้งาน</p>
+                        @else
+                            <p style="color: #adb5bd"  onclick="myFunction()">ปิดการใช้งาน</p>
+                        @endif
+                    </td>
+                    <td class="col-3 col-sm-3 col-md-3" >
+                        <a href="{{ URL::to('edit-inv',$user->id)}}">
+                            <button type="button" class="btn btn-success">เเก้ไข</button>
+                        </a>
+                    </td>
+                </tr>
+            @endforeach
         </tbody>
     </table>
-   
+    <button onclick="myFunction()">Click me</button>
 </div>
 
 @endsection

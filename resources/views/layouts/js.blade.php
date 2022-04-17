@@ -72,22 +72,47 @@ if (currentLocation === '/index') {
     $("#mainPage-none").hide();
     
     $('#clickOffcanvas').trigger('click');
-    console.log(currentLocation);
+
 }
 function functionCopy(e) {
-  navigator.clipboard.writeText(e);
+    console.log('asdasd');
+  /*    navigator.clipboard.writeText(e);
     let textValue = `<span style="color: blue">คัดลอกเเล้ว</span>`;
-  document.getElementById(e).innerHTML = textValue;
+     document.getElementById(e).innerHTML = textValue;
 
     setTimeout(() => {
         let text = `<span style="color: white">คัดลอก</span>`;
         document.getElementById(e).innerHTML = text;
-    }, 1000);
-
+    }, 1000); 
+   */
 }
 
 
 
+$( "#newCode" ).click(function() {
+    const n = 999999999 - 100000000  + 1;
+    let result = Math.floor(Math.random() * n) + 100000000;
+    document.getElementById('inputCode').value = result;
+});
+
+$( "#flexSwitchCheckChecked" ).click(function() {
+    let value = document.getElementById("flexSwitchCheckChecked").checked;
+    if (value  === true) {
+        document.getElementById('textSwitch').innerHTML = "เปิดใช้งาน";
+        
+    }else{
+        document.getElementById('textSwitch').innerHTML = "ปิดใช้งาน";
+    }
+});
+
+function functionDestroy() {
+
+    console.log('e:',e);
+    
+}
+function myFunction() {
+    console.log('55555');
+}
 
 
 </script>

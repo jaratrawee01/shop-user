@@ -26,6 +26,11 @@ Route::get('registerAdmin', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/invitation', [App\Http\Controllers\InvitationController::class, 'index'])->name('home');
+Route::get('/getInvitation', [App\Http\Controllers\InvitationController::class, 'index']);
+Route::get('/createCode', [App\Http\Controllers\InvitationController::class, 'create']);
+Route::post('/save-code', [App\Http\Controllers\InvitationController::class, 'store']);
+Route::get('/edit-inv/{id}', [App\Http\Controllers\InvitationController::class, 'edit']);
+Route::resource('/edit-code', App\Http\Controllers\InvitationController::class);
+
 
 

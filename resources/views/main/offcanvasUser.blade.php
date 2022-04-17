@@ -40,7 +40,7 @@
           <div class="border-th">
             <img src="{{asset('/image/daili1.svg')}}" class="report-manu" alt="...">
             &nbsp;&nbsp;
-            <a  href="invitation" class="text margin-top text-decoration">โปรโหมดตัวแทน</a>
+            <a  href="getInvitation" class="text margin-top text-decoration">โปรโหมดตัวแทน</a>
            
           </div>
           <div class="border-th">

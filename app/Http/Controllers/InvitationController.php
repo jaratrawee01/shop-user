@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Auth;
+use DB;
+use App\Models\Invitation;
+
 
 class InvitationController extends Controller
 {
@@ -13,7 +17,11 @@ class InvitationController extends Controller
      */
     public function index()
     {
-        return view('invitation.index');
+
+        $users = DB::table('invitations')->get();
+        
+
+        return view('invitation.index',['users' => $users]);
     }
 
     /**
@@ -23,7 +31,7 @@ class InvitationController extends Controller
      */
     public function create()
     {
-        //
+        return view('invitation.invitationCode');
     }
 
     /**
@@ -34,7 +42,29 @@ class InvitationController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $request->validate([
+            'code' => 'required|max:255',
+        ]);
+        $id =  Auth::user()->id;
+        $code = $request->code . "" .$id;
+        $status = $request->status;
+        if ($status !== null) {
+            $status = $request->status;
+        }else{
+            $status = "off";
+        }
+       $data = array();
+        $data["code"] = $code;
+        $data["status"]= $status;
+        $data["idUser"]= $id;
+        $data["enrol"]= $request->enrol;
+        $data["percent"]= $request->percent;
+
+
+        DB::table('invitations')->insert($data);
+        return redirect('/getInvitation');
+    /*  return Redirect()->back()->with('success',"บันทึกข้อมูลเรียบร้อยแล้ว"); */
     }
 
     /**
@@ -56,7 +86,11 @@ class InvitationController extends Controller
      */
     public function edit($id)
     {
-        //
+
+        $user = Invitation::find($id);
+        return view('invitation.invitationCodeEdit',['user' => $user]);
+        
+
     }
 
     /**
@@ -68,7 +102,29 @@ class InvitationController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        
+        $request->validate([
+            'code' => 'required|max:255',
+        ]);
+        $idUser =  Auth::user()->id;
+        $idCode = $request->code . "" .$id;
+        $status = $request->status;
+        if ($status !== null) {
+            $status = $request->status;
+        }else{
+            $status = "off";
+        }
+ 
+        $data = Invitation::find($id);
+        $data->code = $idCode;
+        $data->status = $status;
+        $data->idUser= $idUser;
+        $data->enrol= $request->enrol;
+        $data->percent= $request->percent;
+        $data->save();
+
+     /*    DB::table('invitations')->insert($data); */
+        return redirect('/getInvitation');
     }
 
     /**
