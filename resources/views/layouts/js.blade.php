@@ -75,8 +75,8 @@ if (currentLocation === '/index') {
 
 }
 function functionCopy(e) {
-    console.log('asdasd');
-  /*    navigator.clipboard.writeText(e);
+
+    navigator.clipboard.writeText(e);
     let textValue = `<span style="color: blue">คัดลอกเเล้ว</span>`;
      document.getElementById(e).innerHTML = textValue;
 
@@ -84,7 +84,7 @@ function functionCopy(e) {
         let text = `<span style="color: white">คัดลอก</span>`;
         document.getElementById(e).innerHTML = text;
     }, 1000); 
-   */
+   
 }
 
 

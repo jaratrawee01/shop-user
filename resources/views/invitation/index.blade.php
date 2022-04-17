@@ -54,7 +54,6 @@
             @endforeach
         </tbody>
     </table>
-    <button onclick="myFunction()">Click me</button>
 </div>
 
 @endsection
