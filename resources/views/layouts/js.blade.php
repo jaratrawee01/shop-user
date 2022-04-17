@@ -1,5 +1,5 @@
 <script type="text/JavaScript">
-$(document).ready(function(){
+    $(document).ready(function(){
   $(".navbarFooter").click(function(){
     let id =  $(this).attr('id');
    let status =  $(this).attr('value');
@@ -74,17 +74,17 @@ if (currentLocation === '/index') {
     $('#clickOffcanvas').trigger('click');
 
 }
-function functionCopy(e) {
+function functionCopy() {
+    let copy = document.getElementById("codeCopy").innerHTML;
 
-    navigator.clipboard.writeText(e);
-    let textValue = `<span style="color: blue">คัดลอกเเล้ว</span>`;
-     document.getElementById(e).innerHTML = textValue;
+    navigator.clipboard.writeText(copy);
+    let textValue = `<button type="button" class="btn btn-outline-light">คัดลอกเเล้ว</button>`;
+     document.getElementById('idCopy').innerHTML = textValue;
 
     setTimeout(() => {
-        let text = `<span style="color: white">คัดลอก</span>`;
-        document.getElementById(e).innerHTML = text;
+        let text = `<button type="button" class="btn btn-outline-light">คัดลอก</button>`;
+        document.getElementById('idCopy').innerHTML = text;
     }, 1000); 
-   /* zz */
 }
 
 
@@ -105,14 +105,50 @@ $( "#flexSwitchCheckChecked" ).click(function() {
     }
 });
 
-function functionDestroy() {
+function functionDestroy(e) {
+    jQuery.ajax({
+        url: '/gatAjax',
+        method: 'post',
+        data: {
+            "_token": "{{ csrf_token() }}",
+            id: e,
+            },
+        success: function(result){
+            let id = result.id;
+            let code = result.code;
+            let enrol = result.enrol;  
+            let percent = result.percent;  
+            document.getElementById('codeCopy').innerHTML = code;
+            document.getElementById('typeEnrol').innerHTML = enrol;
+            document.getElementById('percentAtive').innerHTML = percent;
+            document.getElementById('destroyId').value = id;
+            $('#onClickOffcanvasBottom1').trigger('click');
+                     
+            },
+        error: function(result){
+        }      
+    });  
+}
+$( "#destroyId" ).click(function() {
 
-    console.log('e:',e);
+    if(confirm()){
+     let id =  document.getElementById('destroyId').value;
+     jQuery.ajax({
+        url: `/gatDestroy/${id}`,
+        method: 'get',
+        data: {
+            "_token": "{{ csrf_token() }}",
+            },
+        success: function(result){
+            window.location.reload(true);
+                     
+            },
+        error: function(result){
+        }      
+    }); 
+
+    }
     
-}
-function myFunction() {
-    console.log('55555');
-}
-
-
+    console.log('asdasd');
+    });
 </script>

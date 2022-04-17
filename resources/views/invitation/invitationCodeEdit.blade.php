@@ -52,12 +52,12 @@
               </div>
               <div class="col-6 col-md-10">
                 <select class="form-select" name="enrol" aria-label="Default select example">
-                    @if ($user->enrol == "เริ่มต้น")
-                      <option value="เริ่มต้น" selected> การลงทะเบียนเริ่มต้น</option>
-                      <option value="ทางการ">เเพลตฟอร์อย่างเป็นทางการ</option>
+                    @if ($user->enrol == "การลงทะเบียนเริ่มต้น")
+                      <option value="การลงทะเบียนเริ่มต้น" selected> การลงทะเบียนเริ่มต้น</option>
+                      <option value="เเพลตฟอร์อย่างเป็นทางการ">เเพลตฟอร์อย่างเป็นทางการ</option>
                     @else
-                      <option value="เริ่มต้น"> การลงทะเบียนเริ่มต้น</option>
-                      <option value="ทางการ" selected>เเพลตฟอร์อย่างเป็นทางการ</option>
+                      <option value="การลงทะเบียนเริ่มต้น"> การลงทะเบียนเริ่มต้น</option>
+                      <option value="เเพลตฟอร์อย่างเป็นทางการ" selected>เเพลตฟอร์อย่างเป็นทางการ</option>
                     @endif
                   </select>
               </div>

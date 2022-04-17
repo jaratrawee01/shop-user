@@ -46,8 +46,8 @@
               </div>
               <div class="col-6 col-md-10">
                 <select class="form-select" name="enrol" aria-label="Default select example">
-                    <option value="เริ่มต้น"> การลงทะเบียนเริ่มต้น</option>
-                    <option value="ทางการ">เเพลตฟอร์อย่างเป็นทางการ</option>
+                    <option value="การลงทะเบียนเริ่มต้น"> การลงทะเบียนเริ่มต้น</option>
+                    <option value="เเพลตฟอร์อย่างเป็นทางการ">เเพลตฟอร์อย่างเป็นทางการ</option>
                   </select>
               </div>
               <div class="col-auto col-md-2">

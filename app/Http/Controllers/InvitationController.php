@@ -34,6 +34,15 @@ class InvitationController extends Controller
         return view('invitation.invitationCode');
     }
 
+    public function getData(Request $request)
+    {
+        $id = $request->id;
+        $data = Invitation::find($id);
+
+        return response()->json($data);
+        # code...
+    }
+
     /**
      * Store a newly created resource in storage.
      *
@@ -135,6 +144,8 @@ class InvitationController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $flight = Invitation::find($id);
+        $flight->delete();
+        return response()->json(['success'=>'Data is successfully added']);
     }
 }

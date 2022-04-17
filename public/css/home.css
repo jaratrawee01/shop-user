@@ -432,8 +432,26 @@
         font-size: 18px;
         color: #ffff !important;
     }
+    .text-offcanvas{
 
+        font-size: 18px;
+        color: #ffff !important;
+    }
 
+    .offcanvas-bottom {
+        background-color:#d3291c;
+        height: 400px;
+    }
+    .bottom-offcanvas {
+        position: relative;
+        text-align: center;
+    }
+    .bottom-offcanvas-border {
+        width: 150px;
+        height: 50px;
+        border-radius: 25px;
+
+    }
 
 
     /* adasdasdasd */

@@ -31,6 +31,8 @@ Route::get('/createCode', [App\Http\Controllers\InvitationController::class, 'cr
 Route::post('/save-code', [App\Http\Controllers\InvitationController::class, 'store']);
 Route::get('/edit-inv/{id}', [App\Http\Controllers\InvitationController::class, 'edit']);
 Route::resource('/edit-code', App\Http\Controllers\InvitationController::class);
+Route::post('/gatAjax', [App\Http\Controllers\InvitationController::class, 'getData']);
+Route::get('/gatDestroy/{id}', [App\Http\Controllers\InvitationController::class, 'destroy']);
 
 
 
