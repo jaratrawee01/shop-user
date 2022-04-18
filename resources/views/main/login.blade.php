@@ -35,13 +35,13 @@
                                             @csrf
                                             <div class="row mb-3">
                                                 <div class="col-md-12">
-                                                    <input id="email" type="text" class="form-control @error('email') is-invalid @enderror" name="username" value="{{ old('email') }}" required placeholder="กรุณากรอกชื่อผู้ใช้" autofocus>
-                    
-                                                    @error('username')
+                                                    <input id="email" type="text" class="form-control @error('username') is-invalid @enderror" name="username" value="{{ old('email') }}" required placeholder="กรุณากรอกชื่อผู้ใช้" autofocus>
+                                                  {{--   @error('username')
                                                         <span class="invalid-feedback" role="alert">
-                                                            <strong>{{ $message }}</strong>
+                                                            <strong style="color: red" id="messageError">{{ $message }}</strong>
                                                         </span>
-                                                    @enderror
+                                                    @enderror --}}
+                                                    <span id="messageError"    class="colorText"></span>
                                                 </div>
                                             </div>
                                             <div class="row mb-3">
@@ -62,7 +62,10 @@
                                             <br>
                                             <br>
                                             <div class="logo-center">
-                                                <p class="colorText" id="subscribe">ไม่มีบัญชี？สมัครสมาชิก</p>
+                                               <a href="register" class="text-decoration">
+                                                    <p class="colorText" id="subscribe">ไม่มีบัญชี？สมัครสมาชิก</p>
+                                               </a>
+                                               
                                             </div>
                                            
                                             <div class="row mb-0 ">

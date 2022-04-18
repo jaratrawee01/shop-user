@@ -65,11 +65,11 @@
       <div class="border-th">
         <img src="{{asset('/image/daili2.svg')}}" class="report-manu" alt="...">
         &nbsp;&nbsp;
-        <span class="text margin-top">ศูนย์บริการ</span>
+        <span class="text margin-top" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight2" aria-controls="offcanvasRight2">ศูนย์บริการ</span>
       </div>
       <div class="border-th">
         <img src="{{asset('/image/daili3.svg')}}" class="report-manu" alt="...">
         &nbsp;&nbsp;
-        <span class="text margin-top">ประกาศ</span>
+        <span class="text margin-top" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight3" aria-controls="offcanvasRight3">ประกาศ</span>
       </div>
 </div>

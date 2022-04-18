@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Auth;
 
 class HomeController extends Controller
 {
@@ -22,8 +23,18 @@ class HomeController extends Controller
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function index()
-    {
-        return view('home');
+    {   
+
+       $id =  Auth::user()->is_idadmin;
+       
+
+        if ($id === '1') {
+            return view('home');
+        }else{
+            return view('welcome');
+        }
+
+      /*   return view('home'); */
        /*  return view('welcome'); */
     }
 }

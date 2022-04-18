@@ -1,5 +1,6 @@
 <script type="text/JavaScript">
-    $(document).ready(function(){
+$(document).ready(function(){
+   
   $(".navbarFooter").click(function(){
     let id =  $(this).attr('id');
    let status =  $(this).attr('value');
@@ -148,7 +149,26 @@ $( "#destroyId" ).click(function() {
     }); 
 
     }
-    
-    console.log('asdasd');
-    });
+});
+
+var locationLogin = window.location.pathname;
+
+
+if (currentLocation === '/login') {
+        $('#onClickRegister').trigger('click');
+        $("#home").addClass("active");
+        $("#location").removeClass("active");
+        $("#gift").removeClass("active");
+        $("#user").removeClass("active");
+        $("#mainPage-none").show();
+        $("#form-login").show();
+        $("#form-subscribe").hide();
+        document.getElementById('messageError').innerHTML = "Username เเละ Password  ไม่ถูกต้อง";
+        
+} 
+$( function() {
+    $( ".datepicker" ).datepicker();
+  });
+
+
 </script>

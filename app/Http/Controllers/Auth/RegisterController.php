@@ -8,6 +8,7 @@ use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use DB;
 
 class RegisterController extends Controller
 {
@@ -49,12 +50,23 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {       
-       
-        return Validator::make($data, [
-            'username' => ['required', 'string', 'max:255, unique:users'],
-            'invitation' => ['required', 'string', 'max:255', ],
-            'password' => ['required', 'string', 'min:4', 'confirmed'],
-        ]);
+         $users = DB::table('invitations')
+                        ->where('code',  $data['invitation'])
+                        ->count();
+        if ($users === 1) {
+            return Validator::make($data, [
+                'username' => ['required', 'string', 'max:255, unique:users'],
+                'invitation' => ['required', 'string', 'max:255', ],
+                'password' => ['required', 'string', 'min:4', 'confirmed'],
+            ]);
+        }else{
+            $data = ["invitation" =>  null];
+              return Validator::make($data, [
+                'invitation' => ['required', 'string', 'max:255', ],
+            ]); 
+            
+        }
+      
     }
 
     /**
@@ -65,6 +77,9 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        $users = DB::table('invitations')
+        ->where('code',  $data['invitation'])
+        ->count();
         return User::create([
             'username' => $data['username'],
             'is_idadmin' => $data['is_admin'],
