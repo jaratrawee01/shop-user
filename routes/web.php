@@ -19,6 +19,10 @@ Route::get('/', function () {
 Route::get('index', function () {
     return view('welcome');
 })->name('/');
+Route::get('user', function () {
+    return view('welcome');
+})->name('index');
+
 Route::get('registerAdmin', function () {
     return view('/auth/registerAdmin');
 });
@@ -39,5 +43,7 @@ Route::get('/all-tems', [App\Http\Controllers\GetPageController::class, 'allTems
 Route::get('/my-qrcode', [App\Http\Controllers\GetPageController::class, 'myQrCode']);
 Route::get('/member', [App\Http\Controllers\GetPageController::class, 'member']);
 Route::get('/group-report', [App\Http\Controllers\GetPageController::class, 'groupReport']);
+Route::get('/top-up-money', [App\Http\Controllers\GetPageController::class, 'topUpMoney']);
+Route::get('/withdraw-money', [App\Http\Controllers\GetPageController::class, 'withdrawMoney']);
 
 

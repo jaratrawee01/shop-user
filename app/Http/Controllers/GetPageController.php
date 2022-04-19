@@ -33,4 +33,14 @@ class GetPageController extends Controller
     {
         return view('main.group_report');
     }
+
+    public function topUpMoney()
+    {
+        return view('main.top_up_money');
+    }
+
+    public function withdrawMoney()
+    {
+        return view('main.withdraw_money');
+    }
 }

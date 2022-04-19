@@ -398,7 +398,7 @@
     }
     
     .head-height {
-        height: 150px;
+        height: auto;
     }
     
     .money-p {
@@ -623,4 +623,19 @@
         margin-left: 20px;
         background-color: #d3291c;
         border-radius: 30px;
+    }
+    
+    .footer-button {
+        position: fixed;
+        bottom: 0px;
+        left: 0px;
+        padding: 10px;
+        width: 100%;
+    }
+    
+    .set-report {
+        position: fixed;
+        right: 35px;
+        margin-top: 10px;
+        font-size: 18px !important;
     }

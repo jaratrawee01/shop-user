@@ -170,10 +170,19 @@ $( function() {
     $( ".datepicker" ).datepicker();
   });
 
-  $( "#reload" ).click(function() {
+  var currentLocation = window.location.pathname;
+if (currentLocation === '/user') {
+        window.onload = (event) => {
+                    $("#user").addClass("active");
+                    $("#user-none").show();
+                    $("#home").removeClass("active");
+                    $("#mainPage-none").hide();
+    
+            console.log('window.onload');
+        };
 
-
-});
+  
+}
 
 
 </script>

@@ -10,14 +10,18 @@
         <tbody>
           <tr class="img-shop">
             <td class="col-3 col-sm-3 col-md-6 " >
+               <a href="top-up-money"  class="text-decoration">
                 <i class="fas fa-wallet colorText" style='font-size:28px'></i>
                 &nbsp;&nbsp;
                 <span class="center-shop" >เติมเงิน</span>
+               </a>
             </td>
             <td class="col-3 col-sm-3 col-md-6 " >
+              <a href="withdraw-money" class="text-decoration">
                 <i class="fas fa-sack-dollar colorText" style='font-size:28px'></i>
                 &nbsp;&nbsp;
                 <span class="center-shop">ถอนเงิน</span>
+              </a>
             </td>
           </tr>
         </tbody>
@@ -28,17 +32,17 @@
     <table class="table table-bordered">
         <tbody >
           <tr class="img-report">
-            <td class="col-3 col-sm-3 col-md-4 td-box" >
+            <td class="col-3 col-sm-3 col-md-4 td-box" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight4" aria-controls="offcanvasRight4"  >
                 <img src="{{asset('/image/re.png')}}" class="report" alt="...">
                <br>
                 <span class="center-shop" >รายงาน</span>
             </td>
-            <td class="col-3 col-sm-3 col-md-4 td-box" >
+            <td class="col-3 col-sm-3 col-md-4 td-box"  data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight5" aria-controls="offcanvasRight5" >
                 <img src="{{asset('/image/re1.png')}}" class="report" alt="...">
                <br>
                 <span class="center-shop">บัญชี</span>
             </td>
-            <td class="col-3 col-sm-3 col-md-4 td-box" >
+            <td class="col-3 col-sm-3 col-md-4 td-box"  data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight6" aria-controls="offcanvasRight6">
                 <img src="{{asset('/image/serve.png')}}" class="report" alt="...">
                <br>
                 <span class="center-shop">บันทึกการจอง</span>
