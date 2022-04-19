@@ -43,4 +43,9 @@ class GetPageController extends Controller
     {
         return view('main.withdraw_money');
     }
+    
+    public function bank()
+    {
+        return view('main.bank');
+    }
 }

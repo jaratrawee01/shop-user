@@ -34,4 +34,9 @@
         </div>
     </div>
 </div>
+<div class="add-bank">
+    <a href="{{ URL::to('#')}}">
+        <i class="fas fa-plus text">&nbsp;  เพิ่มบัตรธนาคาร</i>
+    </a> 
+</div>
 @endsection

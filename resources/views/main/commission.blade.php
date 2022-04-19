@@ -9,7 +9,7 @@
         </a>
     </div>
     <div class="set-head">
-        <p  class="text">โปรโหมดตัวแทน</p>
+        <p  class="text">ค่าคอมมิชชั่นตัวเเทน</p>
     </div>
 </div>
 <div class="container">

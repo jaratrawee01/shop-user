@@ -45,5 +45,6 @@ Route::get('/member', [App\Http\Controllers\GetPageController::class, 'member'])
 Route::get('/group-report', [App\Http\Controllers\GetPageController::class, 'groupReport']);
 Route::get('/top-up-money', [App\Http\Controllers\GetPageController::class, 'topUpMoney']);
 Route::get('/withdraw-money', [App\Http\Controllers\GetPageController::class, 'withdrawMoney']);
+Route::get('/bank', [App\Http\Controllers\GetPageController::class, 'bank']);
 
 
