@@ -54,7 +54,7 @@
       </div>
       <br>
       <div class="border-th">
-        <p  class="text span">0.00 <span>ยอกเงิน ฿ &nbsp;<i class="fa-solid fa-arrow-rotate-right"></i>&nbsp;&nbsp;</span></p>
+        <p  class="text span">0.00 <span>ยอกเงิน ฿ &nbsp;<i class="fa-solid fa-arrow-rotate-right" id="reload"></i>&nbsp;&nbsp;</span></p>
       </div>
       <br>
       <div class="border-th">

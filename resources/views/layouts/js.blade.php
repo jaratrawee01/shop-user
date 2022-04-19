@@ -170,5 +170,10 @@ $( function() {
     $( ".datepicker" ).datepicker();
   });
 
+  $( "#reload" ).click(function() {
+
+
+});
+
 
 </script>
