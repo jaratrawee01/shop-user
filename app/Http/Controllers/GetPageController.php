@@ -99,8 +99,8 @@ class GetPageController extends Controller
     public function registerAdmin(Request $request)
     {
         $request->validate([
-            'username' => ['required', 'string', 'max:255, unique:users'],
-            'password' => ['required', 'string', 'max:255'],
+            'username' => 'required|username|max:255|unique:users,username',
+            'password' => 'required|string|max:255',
         ]);
         $data = new User;
         $data->username = $request->username;

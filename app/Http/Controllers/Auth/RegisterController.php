@@ -52,10 +52,11 @@ class RegisterController extends Controller
     {       
          $users = DB::table('invitations')
                         ->where('code',  $data['invitation'])
+                        ->where('status',  'on')
                         ->count();
         if ($users === 1) {
             return Validator::make($data, [
-                'username' => ['required', 'string', 'max:255, unique:users'],
+                'username' => ['required', 'string', 'max:255', 'unique:users,username'],
                 'invitation' => ['required', 'string', 'max:255', ],
                 'password' => ['required', 'string', 'min:4', 'confirmed'],
             ]);
