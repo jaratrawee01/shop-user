@@ -63,15 +63,15 @@ class InvitationController extends Controller
         }else{
             $status = "off";
         }
-       $data = array();
-        $data["code"] = $code;
-        $data["status"]= $status;
-        $data["idUser"]= $id;
-        $data["enrol"]= $request->enrol;
-        $data["percent"]= $request->percent;
+       $data = new Invitation;
+        $data->code = $code;
+        $data->status= $status;
+        $data->idUser= $id;
+        $data->enrol= $request->enrol;
+        $data->percent = $request->percent;
 
 
-        DB::table('invitations')->insert($data);
+        $data->save();
         return redirect('/getInvitation');
     /*  return Redirect()->back()->with('success',"บันทึกข้อมูลเรียบร้อยแล้ว"); */
     }

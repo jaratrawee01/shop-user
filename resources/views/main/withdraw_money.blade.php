@@ -27,16 +27,64 @@
         </div>
 
         <div class="offcanvas-body offcanvas-color">
-            <div class="gift ">
-                <img src="{{ asset('/image/empty-image.png') }}" class="img-shop-tb-2" alt="...">
-                <p class="font-16"> ไม่มีข้อมูล</p>
-            </div>
+            <table class="table color-fff">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">ชื่อ-นามสกุล</th>
+                    <th scope="col">จำนวนเงิน</th>
+                    <th scope="col">วันที่</th>
+                  </tr>
+                </thead>
+                <tbody>
+                @foreach ($withdraw as $withdraw)
+                  <tr>
+                    <th scope="row"> {{ $withdraw->id }}</th>
+                    <td> {{ $withdraw->bank_account_name }}</td>
+                    <td>{{ $withdraw->withdrawMoney }} ฿</td>
+                    <td>{{ $withdraw->created_at }}</td>
+                  </tr>
+                  @endforeach
+                </tbody>
+              </table>
         </div>
     </div>
 </div>
 <div class="add-bank">
-    <a href="{{ URL::to('#')}}">
+    <a href="{{ URL::to('account')}}">
         <i class="fas fa-plus text">&nbsp;  เพิ่มบัตรธนาคาร</i>
     </a> 
 </div>
+<div class="input-bank">
+    <form method="POST" action="{{ route('withdraw.store') }}">
+        @csrf
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label font-16">จำนวนเงินถอน (B)</label>
+            <input type="0" class="form-control @error('withdrawMoney') is-invalid @enderror" name="withdrawMoney" id="exampleFormControlInput1"
+                placeholder="จำนวนเงิน บาท" required>
+            @if (session('status'))
+                    <strong style="color: #fff">{{ session('status') }}</strong>
+            @endif
+            @error('withdrawMoney')
+                <span class="invalid-feedback" role="alert">
+                    <strong style="color: #fff">{{ $message }}</strong>
+                </span>
+            @enderror
+        </div>
+        <div class="font-size">
+            @if (Auth::user()->money !== "0")
+                ยอดเงิน: {{Auth::user()->money}} ฿
+            @else
+                ยอดเงิน: 0.00 ฿
+            @endif
+        </div>
+        <br>
+        <div class="logo-center">
+            <button type="submit" class="btn btn-outline-light contact"  style="width: 100%">ถอนทันที</button>
+        </div>
+    </form>
+</div>
+
+
+
 @endsection

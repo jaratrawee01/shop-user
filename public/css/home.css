@@ -378,6 +378,10 @@
         color: #ffff !important;
     }
     
+    .color-fff {
+        color: #ffff !important;
+    }
+    
     .span {
         display: flex;
         justify-content: space-between;
@@ -643,4 +647,8 @@
     .add-bank {
         padding: 20px 0px 0px 30px;
         font-size: 24px;
+    }
+    
+    .input-bank {
+        margin: 30px;
     }

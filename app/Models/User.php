@@ -21,6 +21,7 @@ class User extends Authenticatable
         'username',
         'invitation',
         'is_idadmin',
+        'money',
         'password',
     ];
 

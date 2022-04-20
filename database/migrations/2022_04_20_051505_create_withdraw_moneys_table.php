@@ -13,17 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('withdraw_moneys', function (Blueprint $table) {
             $table->id();
-            $table->string('username');
-            $table->string('invitation');
-            $table->string('is_idadmin');
-            $table->string('money')->nullable();
-            $table->string('password');
-            $table->rememberToken();
+            $table->string('idUser');
+            $table->string('withdrawMoney');
             $table->timestamps();
         });
     }
+
     /**
      * Reverse the migrations.
      *
@@ -31,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('withdraw_moneys');
     }
 };

@@ -84,6 +84,7 @@ class RegisterController extends Controller
             'username' => $data['username'],
             'is_idadmin' => $data['is_admin'],
             'invitation' => $data['invitation'],
+            'money' => '0',
             'password' => Hash::make($data['password']),
         ]);
     }

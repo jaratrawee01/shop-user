@@ -17,7 +17,7 @@
                </a>
             </td>
             <td class="col-3 col-sm-3 col-md-6 " >
-              <a href="withdraw-money" class="text-decoration">
+              <a href="withdraw" class="text-decoration">
                 <i class="fas fa-sack-dollar colorText" style='font-size:28px'></i>
                 &nbsp;&nbsp;
                 <span class="center-shop">ถอนเงิน</span>

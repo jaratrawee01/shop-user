@@ -13,14 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('bank_accounts', function (Blueprint $table) {
             $table->id();
-            $table->string('username');
-            $table->string('invitation');
-            $table->string('is_idadmin');
-            $table->string('money')->nullable();
-            $table->string('password');
-            $table->rememberToken();
+            $table->string('id_user');
+            $table->string('bank_account_name');
+            $table->string('bank_account_number');
+            $table->string('bank_name');
             $table->timestamps();
         });
     }
@@ -31,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('bank_accounts');
     }
 };
