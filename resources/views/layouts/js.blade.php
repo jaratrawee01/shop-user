@@ -198,7 +198,7 @@ if (currentLocation === '/set-up') {
                     $("#home").removeClass("active");
                     $("#mainPage-none").hide();
             $('#canvasRight8').trigger('click');
-            console.log('window.onload');
+
         };
 }
 

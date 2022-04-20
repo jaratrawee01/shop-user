@@ -342,10 +342,10 @@
     .set {
         float: right;
         margin: 30px;
+        z-index: 1;
     }
     
     .username {
-        position: relative;
         padding: 50px;
         font-size: 24px;
         color: #ffff;
@@ -651,4 +651,13 @@
     
     .input-bank {
         margin: 30px;
+    }
+    
+    .set-money {
+        float: right;
+        margin: -55px 0;
+    }
+    
+    .set-avatar90 {
+        float: right;
     }

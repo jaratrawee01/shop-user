@@ -7,7 +7,6 @@ use App\Models\Withdraw_money;
 use auth;
 use DB;
 use App\Models\User;
-use Cookie;
 
 
 class Withdraw_moneyController extends Controller
