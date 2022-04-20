@@ -102,7 +102,7 @@
     </div>
 </div>
 
-{{-- ศูนย์บริการ --}}
+{{-- ประกาศ --}}
 
 
 <div>
@@ -287,3 +287,84 @@
     </div>
 </div>
 
+
+{{-- โปรไฟล์ --}}
+
+
+<div>
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight7" aria-labelledby="offcanvasRightLabel7">
+        <div class="offcanvas-header head ">
+            <div class="head-center"></div>
+            <h5 class="text">ข้อมูลพื้นฐาน</h5>
+            <button type="button" class="btn-close text-reset " data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+
+        <div class="offcanvas-body offcanvas-color ">
+            <div class="margin-user">
+                <div class="border-th">
+                    <p  class="text span"><br>รูปโปรไพล์ <img src="{{asset('/image/avatar90.png')}}" class="avatar" alt="..."     </p>
+                    <br>
+                </div>
+                  <br>
+                  <div class="border-th">
+                    <p  class="text span ">ชื่อจริง <span>ยังไม่ได้ตั้งค่า &nbsp;&nbsp;&nbsp;</span></p>
+                  </div>
+                  <br>
+                  <div class="border-th">
+                    <p  class="text span">เพศ <span>ชาย &nbsp;&nbsp;&nbsp;</span></p>
+                  </div>
+                  <br>
+                  <div class="border-th">
+                    <p  class="text span">ชื่อเล่น<span>Apolonia Lyberger &nbsp;&nbsp;&nbsp;</span></p>
+                  </div>
+                  <br>
+                  <div class="border-th">
+                    <p  class="text span">ผูกมัดบัญชี<span>ไม่มี &nbsp;&nbsp;&nbsp;</span></p>
+                  </div>
+                  <br>
+                  <div class="border-th">
+                    <p  class="text span">หมายเลขโทรศัพท์ <span>****+66 &nbsp;&nbsp;&nbsp;</span></p>
+                  </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{{-- ตั้งค่า --}}
+
+
+<div>
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight8" aria-labelledby="offcanvasRightLabel8">
+        <div class="offcanvas-header head ">
+            <div class="head-center"></div>
+            <h5 class="text">ตั้งค่า</h5>
+            <button type="button" class="btn-close text-reset " data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+
+        <div class="offcanvas-body offcanvas-color">
+             <div class="border-th">
+                    <p  class="text span">การตั้งค่าข้อมูลพื้นฐาน<span>ไม่มี &nbsp;&nbsp;&nbsp;</span></p>
+             </div>
+             <br>
+             <div class="border-th">
+                    <p  class="text span">รหัสผ่าน<span>ไม่มี &nbsp;&nbsp;&nbsp;</span></p>
+             </div>
+             <br>
+             <div class="border-th">
+                    <p  class="text span">รหัสถอนเงิน<span>ตั้งค่าแล้ว &nbsp;&nbsp;&nbsp;</span></p>
+             </div>
+             <br>
+             <div class="border-th">
+                    <p  class="text span">ตั้งค่าทั่วไป<span>ไม่มี &nbsp;&nbsp;&nbsp;</span></p>
+             </div>
+             <br>
+             <div class="border-th">
+                    <p  class="text span">แสดงความคิดเห็น<span>ไม่มี &nbsp;&nbsp;&nbsp;</span></p>
+             </div>
+             <br>
+             <div class="border-th">
+                    <p  class="text span">เกียวกับเรา<span>ไม่มี &nbsp;&nbsp;&nbsp;</span></p>
+             </div>
+        </div>
+    </div>
+</div>
