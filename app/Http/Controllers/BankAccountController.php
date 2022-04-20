@@ -52,7 +52,7 @@ class BankAccountController extends Controller
         $data->bank_name = $request->bank_name;
 
         $data->save();
-        return redirect('/withdraw-money');
+        return redirect('/withdraw');
     }
 
     /**

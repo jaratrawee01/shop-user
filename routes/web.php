@@ -60,6 +60,8 @@ Route::get('/money-user', [App\Http\Controllers\GetPageController::class, 'money
 Route::post('/money-user', [App\Http\Controllers\GetPageController::class, 'moneyUser']);
 Route::resource('/add-money-user', App\Http\Controllers\addMonetUserController::class);
 Route::resource('/getOutMonetUser', App\Http\Controllers\outMoneyUsersController::class);
+Route::get('/outMoney/{id}', [App\Http\Controllers\outMoneyUsersController::class, 'outMoney']);
+Route::get('/remove/{id}', [App\Http\Controllers\outMoneyUsersController::class, 'destroy']);
 Route::resource('/account', App\Http\Controllers\BankAccountController::class);
 Route::resource('/withdraw', App\Http\Controllers\Withdraw_moneyController::class);
 Route::get('/reload-money', [App\Http\Controllers\Withdraw_moneyController::class,'reloadMoney']);

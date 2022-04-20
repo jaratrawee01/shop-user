@@ -9,7 +9,7 @@
     </div>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">เติมเงิน สมาชิก</a>
+          <a class="navbar-brand" href="#">ถอนเงิน สมาชิก</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -26,33 +26,41 @@
         <thead>
             <tr>
               <th scope="col">#</th>
-              <th scope="col">ชื่อ</th>
-              <th scope="col">รหัสคำเชิญ</th>
-              <th scope="col">จำนวนเงิน</th>
-              <th scope="col">เติมเงิน</th>
+              <th scope="col">ชื่อบัญชี</th>
+              <th scope="col">เลขบัญชี</th>
+              <th scope="col">ธนาคาร</th>
+              <th scope="col">จำนวนเงิน ถอน</th>
+              <th scope="col">จำนวนเงิน คงเหลือ</th>
             </tr>
           </thead>
         <tbody>
             @php
              $idUser = 1;   
             @endphp
-            @foreach ($user as $user)
+            @foreach ($users as $user)
                 <tr class="onClickBtn" >
-                        <td class="col-3 col-sm-3 col-md-3" >
+                        <td class="col-1 col-sm-1 col-md-1" >
                             {{ $idUser++ }} 
-                           {{--  <span class="tooltiptext" id="{{$user->code}}" onclick="functionCopy({{$user->code}})">คัดลอก</span> --}}
                         </td>
-                        <td class="col-3 col-sm-3 col-md-3">
-                          {{ $user->username }} 
+                        <td class="col-2 col-sm-2 col-md-2">
+                          {{ $user->bank_account_name }} 
                         </td>
-                        <td class="col-3 col-sm-3 col-md-3 ">
-                          {{ $user->invitation }} 
+                        <td class="col-2 col-sm-2 col-md-2 ">
+                          {{ $user->bank_account_number }} 
                         </td>
-                    <td class="col-3 col-sm-3 col-md-2" >
-                       {{ $user->money }} 
-                    </td>
-                    <td class="col-3 col-sm-3 col-md-2" >
-                        <a   href="{{ URL::to('add-money',$user->id)}}" class="btn btn-outline-info">เติมเงิน</a>
+                        <td class="col-2 col-sm-2 col-md-2" >
+                            {{ $user->bank_name }} 
+                         </td>
+                        <td class="col-1 col-sm-1 col-md-1" >
+                        {{ $user->withdrawMoney }}  บาท  
+                        </td>
+                        <td class="col-2 col-sm-2 col-md-2" >
+                            {{ $user->money }}  บาท  
+                            </td>
+                    <td class="col-2 col-sm-2 col-md-2" >
+
+                        <a   href="{{ URL::to('outMoney',$user->id,)}}" class="btn btn-outline-info"  onclick="if(confirm('ยืนยันการอนุมัติ การถอน')) return true; else return false;" >อนุมัติ</a>&nbsp;&nbsp;
+                        <a   href="{{ URL::to('remove',$user->id)}}" class="btn btn-outline-secondary" onclick="if(confirm('ไม่อนุมัติการถอน')) return true; else return false;">ไม่อนุมัติ</a>
                      </td>
                 </tr>
             @endforeach

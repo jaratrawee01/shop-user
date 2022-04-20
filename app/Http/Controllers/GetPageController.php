@@ -130,11 +130,6 @@ class GetPageController extends Controller
       $name = $request->search;
 
              if ($name !== null) {
-               /*  $user = DB::table('bank_accounts')
-                        ->rightJoin('users', 'bank_accounts.id_user', '=', 'users.id')
-                        ->where('is_idadmin', 0)
-                        ->where('category', 'LIKE', '%' . $category . '%');  
-                        ->get();  */
                     $user = DB::table('users')
                         ->where('is_idadmin', 0) 
                         ->where('username', 'LIKE', '%' . $name . '%')
