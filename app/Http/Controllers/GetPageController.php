@@ -51,6 +51,10 @@ class GetPageController extends Controller
     {
         return view('main.comment');
     }
+    public function Kyoto()
+    {
+        return view('main.Kyoto');
+    }
      
 
 }

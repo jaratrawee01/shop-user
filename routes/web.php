@@ -50,6 +50,7 @@ Route::get('/withdraw-money', [App\Http\Controllers\GetPageController::class, 'w
 Route::get('/general', [App\Http\Controllers\GetPageController::class, 'general']);
 Route::get('/editUser', [App\Http\Controllers\GetPageController::class, 'editUser']);
 Route::get('/comment', [App\Http\Controllers\GetPageController::class, 'comment']);
+Route::get('/Kyoto', [App\Http\Controllers\GetPageController::class, 'Kyoto']);
 Route::resource('/account', App\Http\Controllers\BankAccountController::class);
 Route::resource('/withdraw', App\Http\Controllers\Withdraw_moneyController::class);
 Route::get('/reload-money', [App\Http\Controllers\Withdraw_moneyController::class,'reloadMoney']);

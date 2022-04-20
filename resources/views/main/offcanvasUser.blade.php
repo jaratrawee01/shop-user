@@ -378,7 +378,9 @@
              </div>
              <br>
              <div class="border-th">
+                 <a href="Kyoto" class="text-decoration">
                     <p  class="text span">เกียวกับเรา<span>ไม่มี &nbsp;&nbsp;&nbsp;</span></p>
+                 </a>
              </div>
         </div>
     </div>

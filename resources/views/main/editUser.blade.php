@@ -9,7 +9,7 @@
         </a>
     </div>
     <div class="set-head">
-        <p  class="text"></p>
+        <p  class="text">แก้ไขรหัสผ่าน</p>
     </div>
 </div>
 
