@@ -10,7 +10,7 @@
         <div class="head text head-height">
             <img src="{{ asset('/image/avatar90.png') }}" class="avatar" alt="...">
             <span> &nbsp; {{ Auth::user()->username }} </span>
-            <p class="money-p"> ยอดเงิน: 0.00</p>
+            <p class="money-p"> ยอดเงิน: {{Auth::user()->money}} ฿</p>
         </div>
         <div class="offcanvas-body offcanvas-color">
             <div class="container logo-center ">
@@ -290,7 +290,6 @@
 
 {{-- โปรไฟล์ --}}
 
-
 <div>
     <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight7" aria-labelledby="offcanvasRightLabel7">
         <div class="offcanvas-header head ">
@@ -302,12 +301,16 @@
         <div class="offcanvas-body offcanvas-color ">
             <div class="margin-user">
                 <div class="border-th">
-                    <p  class="text span"><br>รูปโปรไพล์ <img src="{{asset('/image/avatar90.png')}}" class="avatar" alt="..."     </p>
+                    <p  class="text span"><br>รูปโปรไพล์ <img src="{{asset('/image/avatar90.png')}}" class="avatar set-avatar90" alt="..."> </p>
                     <br>
                 </div>
                   <br>
                   <div class="border-th">
-                    <p  class="text span ">ชื่อจริง <span>ยังไม่ได้ตั้งค่า &nbsp;&nbsp;&nbsp;</span></p>
+                    <p  class="text span ">ชื่อจริง <span>
+                        @if(Session::has('username'))
+                            {{Session::get('username')}}
+                        @endif
+                     &nbsp;&nbsp;&nbsp;</span></p>
                   </div>
                   <br>
                   <div class="border-th">
@@ -315,11 +318,15 @@
                   </div>
                   <br>
                   <div class="border-th">
-                    <p  class="text span">ชื่อเล่น<span>Apolonia Lyberger &nbsp;&nbsp;&nbsp;</span></p>
+                    <p  class="text span">ชื่อเล่น<span>{{Auth::user()->username}} &nbsp;&nbsp;&nbsp;</span></p>
                   </div>
                   <br>
                   <div class="border-th">
-                    <p  class="text span">ผูกมัดบัญชี<span>ไม่มี &nbsp;&nbsp;&nbsp;</span></p>
+                    <p  class="text span">ผูกมัดบัญชี<span>
+                        @if(Session::has('bank_name'))
+                            {{Session::get('bank_name')}}
+                        @endif
+                        &nbsp;&nbsp;&nbsp;</span></p>
                   </div>
                   <br>
                   <div class="border-th">
@@ -329,6 +336,7 @@
         </div>
     </div>
 </div>
+
 
 {{-- ตั้งค่า --}}
 
@@ -347,7 +355,9 @@
              </div>
              <br>
              <div class="border-th">
+                 <a href="editUser"  class="text-decoration" >
                     <p  class="text span">รหัสผ่าน<span>ไม่มี &nbsp;&nbsp;&nbsp;</span></p>
+                 </a>
              </div>
              <br>
              <div class="border-th">
@@ -355,11 +365,16 @@
              </div>
              <br>
              <div class="border-th">
-                    <p  class="text span">ตั้งค่าทั่วไป<span>ไม่มี &nbsp;&nbsp;&nbsp;</span></p>
+                 <a href="general"  class="text-decoration" >
+                     <p  class="text span">ตั้งค่าทั่วไป<span>ไม่มี &nbsp;&nbsp;&nbsp;</span></p>
+                </a>
+                    
              </div>
              <br>
              <div class="border-th">
+                 <a href="comment" class="text-decoration">
                     <p  class="text span">แสดงความคิดเห็น<span>ไม่มี &nbsp;&nbsp;&nbsp;</span></p>
+                 </a>
              </div>
              <br>
              <div class="border-th">

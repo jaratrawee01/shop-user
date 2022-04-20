@@ -39,10 +39,18 @@ class GetPageController extends Controller
         return view('main.top_up_money');
     }
 
-   /*  public function withdrawMoney()
+    public function general()
     {
-        return view('main.withdraw_money');
+        return view('main.general');
     }
-     */
+    public function editUser()
+    {
+        return view('main.editUser');
+    }
+    public function comment()
+    {
+        return view('main.comment');
+    }
+     
 
 }

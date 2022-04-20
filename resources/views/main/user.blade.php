@@ -2,7 +2,8 @@
     <i class="fa-solid fa-gear" style='font-size:28px' data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight7" aria-controls="offcanvasRight7"></i>
 </div>
 <div  class="username"  >
-    <img src="{{asset('/image/avatar90.png')}}" class="avatar" alt="..." data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight7" aria-controls="offcanvasRight7">
+    <img src="{{asset('/image/avatar90.png')}}" class="avatar" alt="..." id="canvasRight8"
+    data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight8" aria-controls="offcanvasRight8">
     <span>  &nbsp; {{Auth::user()->username}}</span>
 </div>
 <div class="container logo-center ">

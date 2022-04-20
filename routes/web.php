@@ -22,7 +22,9 @@ Route::get('index', function () {
 Route::get('user', function () {
     return view('welcome');
 })->name('index');
-
+Route::get('set-up', function () {
+    return view('welcome');
+})->name('index');
 Route::get('registerAdmin', function () {
     return view('/auth/registerAdmin');
 });
@@ -45,6 +47,9 @@ Route::get('/member', [App\Http\Controllers\GetPageController::class, 'member'])
 Route::get('/group-report', [App\Http\Controllers\GetPageController::class, 'groupReport']);
 Route::get('/top-up-money', [App\Http\Controllers\GetPageController::class, 'topUpMoney']);
 Route::get('/withdraw-money', [App\Http\Controllers\GetPageController::class, 'withdrawMoney']);
+Route::get('/general', [App\Http\Controllers\GetPageController::class, 'general']);
+Route::get('/editUser', [App\Http\Controllers\GetPageController::class, 'editUser']);
+Route::get('/comment', [App\Http\Controllers\GetPageController::class, 'comment']);
 Route::resource('/account', App\Http\Controllers\BankAccountController::class);
 Route::resource('/withdraw', App\Http\Controllers\Withdraw_moneyController::class);
 Route::get('/reload-money', [App\Http\Controllers\Withdraw_moneyController::class,'reloadMoney']);

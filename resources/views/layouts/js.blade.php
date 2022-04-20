@@ -190,6 +190,18 @@ if (currentLocation === '/user') {
         };
 }
 
+var currentLocation = window.location.pathname;
+if (currentLocation === '/set-up') {
+        window.onload = (event) => {
+                    $("#user").addClass("active");
+                    $("#user-none").show();
+                    $("#home").removeClass("active");
+                    $("#mainPage-none").hide();
+            $('#canvasRight8').trigger('click');
+            console.log('window.onload');
+        };
+}
+
 
 $( "#reload").click(function() {
 
