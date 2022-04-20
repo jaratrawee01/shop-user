@@ -9,11 +9,67 @@
         </div>
       </nav>
       <div class="tab-content" id="nav-tabContent">
-        <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-            {{-- table Admin --}}
+        <div class="tab-pane fade show active">
+          <table class="table table-bordered text-table">
+            <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">ชื่อ</th>
+                  <th scope="col">รหัสคำเชิญ</th>
+                  <th scope="col">จำนวนเงิน</th>
+                </tr>
+              </thead>
+            <tbody>
+                @foreach ($admin as $admin)
+                    <tr class="onClickBtn" >
+                            <td class="col-3 col-sm-3 col-md-3" >
+                                {{ $admin->id }} 
+                               {{--  <span class="tooltiptext" id="{{$user->code}}" onclick="functionCopy({{$user->code}})">คัดลอก</span> --}}
+                            </td>
+                            <td class="col-3 col-sm-3 col-md-3">
+                              {{ $admin->username }} 
+                            </td>
+                            <td class="col-3 col-sm-3 col-md-3 ">
+                              {{ $admin->invitation }} 
+                            </td>
+                        <td class="col-3 col-sm-3 col-md-3" >
+                           {{ $admin->money }} 
+                        </td>
+                    </tr>
+                @endforeach
+            </tbody>
+        </table>
         </div>
         <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-            {{-- table User --}}
+          <table class="table table-bordered text-table">
+            <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">ชื่อ</th>
+                  <th scope="col">รหัสคำเชิญ</th>
+                  <th scope="col">จำนวนเงิน</th>
+                </tr>
+              </thead>
+            <tbody>
+                @foreach ($user as $user)
+                    <tr class="onClickBtn" >
+                            <td class="col-3 col-sm-3 col-md-3" >
+                                {{ $user->id }} 
+                               {{--  <span class="tooltiptext" id="{{$user->code}}" onclick="functionCopy({{$user->code}})">คัดลอก</span> --}}
+                            </td>
+                            <td class="col-3 col-sm-3 col-md-3">
+                              {{ $user->username }} 
+                            </td>
+                            <td class="col-3 col-sm-3 col-md-3 ">
+                              {{ $user->invitation }} 
+                            </td>
+                        <td class="col-3 col-sm-3 col-md-3" >
+                           {{ $user->money }} 
+                        </td>
+                    </tr>
+                @endforeach
+            </tbody>
+        </table>
         </div>
       </div>
 
