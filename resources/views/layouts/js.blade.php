@@ -74,15 +74,7 @@ if (currentLocation === '/index') {
     
     $('#clickOffcanvas').trigger('click');
 }
-/* เสร็จให้ ลบ  */
-if (currentLocation === '/home') {
-    $("#user").addClass("active");
-    $("#user-none").show();
-    /* removeClass */
-    $("#home").removeClass("active");
-    $("#mainPage-none").hide();
-}
-/* สิ้นสุด */
+
 function functionCopy() {
     let copy = document.getElementById("codeCopy").innerHTML;
 

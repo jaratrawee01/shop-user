@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\User;
+use Auth;
+use Illuminate\Support\Facades\Hash;
+
 
 class GetPageController extends Controller
 {
@@ -55,6 +59,22 @@ class GetPageController extends Controller
     {
         return view('main.Kyoto');
     }
-     
+    
+    public function newUser(Request $request)
+    {
+
+        $request->validate([
+            'name' => 'required|max:255',
+            'pass' => 'required|max:255',
+        ]);
+        $id =  Auth::user()->id;
+
+        $flight = User::find($id);
+        $flight->username = $request->name;
+        $flight->password = Hash::make($request->pass);
+        $flight->save(); 
+        return Redirect()->back()->with('status',"เปลี่ยน  Username เเละ Password สำเร็จ");
+
+    }
 
 }

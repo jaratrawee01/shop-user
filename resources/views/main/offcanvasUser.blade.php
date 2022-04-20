@@ -382,6 +382,19 @@
                     <p  class="text span">เกียวกับเรา<span>ไม่มี &nbsp;&nbsp;&nbsp;</span></p>
                  </a>
              </div>
+             <br>
+             <div class="logo-center">
+                <button type="submit" class="btn btn-outline-light contact col-12 col-md-8 text" 
+                            href="{{ route('logout') }}"
+                            onclick="event.preventDefault();
+                            document.getElementById('logout-form').submit();" >
+                            ออกจากระบบ
+                        </button>
+            </div>
+
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                @csrf
+            </form>
         </div>
     </div>
 </div>
