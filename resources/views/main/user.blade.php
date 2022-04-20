@@ -1,5 +1,5 @@
 <div  class="set">
-    <i class="fa-solid fa-gear" style='font-size:28px'></i>
+    <i class="fa-solid fa-gear" style='font-size:28px' data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight7" aria-controls="offcanvasRight7"></i>
 </div>
 <div  class="username"  >
     <img src="{{asset('/image/avatar90.png')}}" class="avatar" alt="..." data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight7" aria-controls="offcanvasRight7">
@@ -58,7 +58,7 @@
       </div>
       <br>
       <div class="border-th">
-        <p  class="text span">0.00 <span>ยอกเงิน ฿ &nbsp;<i class="fa-solid fa-arrow-rotate-right" id="reload"></i>&nbsp;&nbsp;</span></p>
+        <p  class="text span"  id="modeyUser">{{Auth::user()->money}} <span>ยอกเงิน ฿ &nbsp;<i class="fa-solid fa-arrow-rotate-right" id="reload"></i>&nbsp;&nbsp;</span></p>
       </div>
       <br>
       <div class="border-th">

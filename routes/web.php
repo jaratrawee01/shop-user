@@ -47,4 +47,5 @@ Route::get('/top-up-money', [App\Http\Controllers\GetPageController::class, 'top
 Route::get('/withdraw-money', [App\Http\Controllers\GetPageController::class, 'withdrawMoney']);
 Route::resource('/account', App\Http\Controllers\BankAccountController::class);
 Route::resource('/withdraw', App\Http\Controllers\Withdraw_moneyController::class);
+Route::get('/reload-money', [App\Http\Controllers\Withdraw_moneyController::class,'reloadMoney']);
 

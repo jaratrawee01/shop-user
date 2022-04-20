@@ -27,6 +27,14 @@ class Withdraw_moneyController extends Controller
 
         return view('main.withdraw_money',['withdraw' => $withdraw]);
     }
+    public function reloadMoney()
+    {
+        $idUser =  Auth::user()->id;
+        $withdraw = DB::table('users')
+                     ->where('id',$idUser)  
+                    ->get(); 
+            return response()->json($withdraw);
+    }
 
     /**
      * Show the form for creating a new resource.

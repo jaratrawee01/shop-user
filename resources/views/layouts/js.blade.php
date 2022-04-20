@@ -178,7 +178,7 @@ $( function() {
     $( ".datepicker" ).datepicker();
   });
 
-  var currentLocation = window.location.pathname;
+var currentLocation = window.location.pathname;
 if (currentLocation === '/user') {
         window.onload = (event) => {
                     $("#user").addClass("active");
@@ -188,9 +188,40 @@ if (currentLocation === '/user') {
     
             console.log('window.onload');
         };
-
-  
 }
 
+
+$( "#reload").click(function() {
+
+var currentLocation = window.location.pathname;
+    if (currentLocation) {
+        window.onload = (event) => {
+                    $("#user").addClass("active");
+                    $("#user-none").show();
+                    $("#home").removeClass("active");
+                    $("#mainPage-none").hide();
+    
+            console.log('window.onload');
+        };
+    }
+
+/* 
+  jQuery.ajax({
+        url: `/reload-money`,
+        method: 'get',
+        data: {
+            "_token": "{{ csrf_token() }}",
+            },
+        success: function(result){
+            let modey = result[0].money;
+            let spant = `<span>ยอกเงิน ฿ &nbsp;<i class="fa-solid fa-arrow-rotate-right" id="reload"></i>&nbsp;&nbsp;</span></p>`;
+            let text = `<p  class="text span">${modey} ${spant}`;
+            document.getElementById('modeyUser').innerHTML = modey;
+                    
+            },
+        error: function(result){
+        }      
+    });   */
+});
 
 </script>
