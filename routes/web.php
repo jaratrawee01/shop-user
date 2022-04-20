@@ -51,6 +51,8 @@ Route::get('/general', [App\Http\Controllers\GetPageController::class, 'general'
 Route::get('/editUser', [App\Http\Controllers\GetPageController::class, 'editUser']);
 Route::get('/comment', [App\Http\Controllers\GetPageController::class, 'comment']);
 Route::get('/Kyoto', [App\Http\Controllers\GetPageController::class, 'Kyoto']);
+Route::get('/newAdmin', [App\Http\Controllers\GetPageController::class, 'newAdmin']);
+Route::post('/registerAdmin', [App\Http\Controllers\GetPageController::class, 'registerAdmin']);
 Route::post('/new-user', [App\Http\Controllers\GetPageController::class, 'newUser']);
 Route::resource('/account', App\Http\Controllers\BankAccountController::class);
 Route::resource('/withdraw', App\Http\Controllers\Withdraw_moneyController::class);

@@ -309,6 +309,8 @@
                     <p  class="text span ">ชื่อจริง <span>
                         @if(Session::has('username'))
                             {{Session::get('username')}}
+                        @else
+                        ยังไม่ได้ตั้งค่า
                         @endif
                      &nbsp;&nbsp;&nbsp;</span></p>
                   </div>
@@ -325,6 +327,8 @@
                     <p  class="text span">ผูกมัดบัญชี<span>
                         @if(Session::has('bank_name'))
                             {{Session::get('bank_name')}}
+                        @else
+                        ไม่มี
                         @endif
                         &nbsp;&nbsp;&nbsp;</span></p>
                   </div>

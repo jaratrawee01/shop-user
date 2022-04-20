@@ -69,8 +69,6 @@ class InvitationController extends Controller
         $data->idUser= $id;
         $data->enrol= $request->enrol;
         $data->percent = $request->percent;
-
-
         $data->save();
         return redirect('/getInvitation');
     /*  return Redirect()->back()->with('success',"บันทึกข้อมูลเรียบร้อยแล้ว"); */

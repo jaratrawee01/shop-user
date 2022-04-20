@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>shop-user</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -24,7 +24,7 @@
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
+                    shop-user
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -32,10 +32,20 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav me-auto">
-
-                    </ul>
-
+                    <ul class="nav">
+                        <li class="nav-item">
+                          <a class="nav-link active" aria-current="page" href="home">Home</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">เติมเงิน</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#" >ถอนเงิน</a>
+                        </li> 
+                        <li class="nav-item">
+                            <a class="nav-link" href="newAdmin" >เพิ่ม Admin</a>
+                          </li>     
+                      </ul>
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
                         <!-- Authentication Links -->

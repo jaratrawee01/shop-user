@@ -27,15 +27,28 @@ class HomeController extends Controller
     public function index()
     {   
 
-       $id =  Auth::user()->is_idadmin;
+      $id =  Auth::user()->is_idadmin;
+        $contBank = DB::table('bank_accounts')
+            ->where('id_user',Auth::user()->id)  
+            ->count(); 
        
-       $bank = DB::table('bank_accounts')
+        if ($contBank !== 0) {
+            $bank = DB::table('bank_accounts')
                 ->where('id_user',Auth::user()->id)  
-            ->get(); 
-       Session::put('bank_name', $bank[0]->bank_name);
-       Session::put('username', $bank[0]->bank_account_name);
+                ->get();
+            Session::put('bank_name', $bank[0]->bank_name);
+            Session::put('username', $bank[0]->bank_account_name); 
+        }
+
         if ($id === '1') {
-            return view('home');
+            $admin = DB::table('users')
+                ->where('is_idadmin', 1)  
+                ->get(); 
+            $user = DB::table('users')
+                ->where('is_idadmin', 0)  
+                ->get(); 
+            
+            return view('home',['admin' => $admin,'user'=> $user]);
         }else{
             return view('welcome');
         }

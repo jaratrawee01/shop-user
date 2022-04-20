@@ -10,7 +10,21 @@ use Illuminate\Support\Facades\Hash;
 
 class GetPageController extends Controller
 {
-    //
+        /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
 
     public function commission()
     {
@@ -75,6 +89,27 @@ class GetPageController extends Controller
         $flight->save(); 
         return Redirect()->back()->with('status',"เปลี่ยน  Username เเละ Password สำเร็จ");
 
+    }
+
+    public function newAdmin()
+    {
+        return view('auth.registerAdmin');
+    }
+
+    public function registerAdmin(Request $request)
+    {
+        $request->validate([
+            'username' => ['required', 'string', 'max:255, unique:users'],
+            'password' => ['required', 'string', 'max:255'],
+        ]);
+        $data = new User;
+        $data->username = $request->username;
+        $data->invitation= rand();
+        $data->is_idadmin= "1";
+        $data->money= "0";
+        $data->password = $request->password;
+        $data->save();
+        return redirect('/newAdmin')->with('status',"สมัคร Admin สำเสร็จเเล้ว");
     }
 
 }

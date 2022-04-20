@@ -35,9 +35,10 @@
                                                 <div class="col-md-12">
                                                     <input id="username" type="text" class="form-control @error('username') is-invalid @enderror" name="username" value="{{ old('name') }}" required placeholder="กรุณากรอกชื่อผู้ใช้" autofocus> 
                                                     @error('username')
-                                                    <span class="invalid-feedback" role="alert">
+                                                        <span class="invalid-feedback" role="alert">
                                                             <strong>{{ $message }}</strong>
-                                                        </span> @enderror
+                                                        </span> 
+                                                        @enderror
                                                 </div>
                                             </div>
                                             <div class="row mb-3" style="display:none">
