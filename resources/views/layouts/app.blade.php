@@ -34,13 +34,13 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="nav">
                         <li class="nav-item">
-                          <a class="nav-link active" aria-current="page" href="home">Home</a>
+                          <a class="nav-link active" aria-current="page" href=" {{ URL::to('home')}} ">Home</a>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link" href="#">เติมเงิน</a>
+                          <a class="nav-link" href="{{ URL::to('money-user')}}">เติมเงิน</a>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link" href="#" >ถอนเงิน</a>
+                          <a class="nav-link" href="{{ URL::to('getOutMonetUser')}}" >ถอนเงิน</a>
                         </li> 
                         <li class="nav-item">
                             <a class="nav-link" href="newAdmin" >เพิ่ม Admin</a>

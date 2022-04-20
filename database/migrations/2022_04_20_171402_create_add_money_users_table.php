@@ -13,11 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('withdraw_moneys', function (Blueprint $table) {
+        Schema::create('add_money_users', function (Blueprint $table) {
             $table->id();
-            $table->string('idUser');
-            $table->string('withdrawMoney');
-            $table->string('statusMoney');
+            $table->string('id_user');
+            $table->string('money');
             $table->timestamps();
         });
     }
@@ -29,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('withdraw_moneys');
+        Schema::dropIfExists('add_money_users');
     }
 };

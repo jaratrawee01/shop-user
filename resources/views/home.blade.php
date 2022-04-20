@@ -20,10 +20,14 @@
                 </tr>
               </thead>
             <tbody>
+                @php
+                $idAdmin = 1;
+                $idUser = 1;
+                @endphp
                 @foreach ($admin as $admin)
                     <tr class="onClickBtn" >
                             <td class="col-3 col-sm-3 col-md-3" >
-                                {{ $admin->id }} 
+                                {{ $idAdmin++ }} 
                                {{--  <span class="tooltiptext" id="{{$user->code}}" onclick="functionCopy({{$user->code}})">คัดลอก</span> --}}
                             </td>
                             <td class="col-3 col-sm-3 col-md-3">
@@ -35,6 +39,7 @@
                         <td class="col-3 col-sm-3 col-md-3" >
                            {{ $admin->money }} 
                         </td>
+
                     </tr>
                 @endforeach
             </tbody>
@@ -54,7 +59,7 @@
                 @foreach ($user as $user)
                     <tr class="onClickBtn" >
                             <td class="col-3 col-sm-3 col-md-3" >
-                                {{ $user->id }} 
+                                {{ $idUser++ }} 
                                {{--  <span class="tooltiptext" id="{{$user->code}}" onclick="functionCopy({{$user->code}})">คัดลอก</span> --}}
                             </td>
                             <td class="col-3 col-sm-3 col-md-3">
@@ -72,5 +77,7 @@
         </table>
         </div>
       </div>
+<script>
 
+</script>
 @endsection

@@ -55,6 +55,12 @@
         <i class="fas fa-plus text">&nbsp;  เพิ่มบัตรธนาคาร</i>
     </a> 
 </div>
+<div style="text-align: center">
+    @if (session('message'))
+        <strong style="color: #fff;font-size: 24px;">{{ session('message') }}</strong>
+    @endif
+
+</div>
 <div class="input-bank">
     <form method="POST" action="{{ route('withdraw.store') }}">
         @csrf

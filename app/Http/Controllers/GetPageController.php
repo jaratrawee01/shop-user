@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Invitation;
 use Auth;
+use DB;
 use Illuminate\Support\Facades\Hash;
 
 
@@ -73,7 +75,7 @@ class GetPageController extends Controller
     {
         return view('main.Kyoto');
     }
-    
+   
     public function newUser(Request $request)
     {
 
@@ -99,17 +101,64 @@ class GetPageController extends Controller
     public function registerAdmin(Request $request)
     {
         $request->validate([
-            'username' => 'required|username|max:255|unique:users,username',
+            'username' => ['required', 'string', 'max:255', 'unique:users,username'],
             'password' => 'required|string|max:255',
         ]);
+
+        $code = rand();
         $data = new User;
         $data->username = $request->username;
-        $data->invitation= rand();
+        $data->invitation= $code;
         $data->is_idadmin= "1";
         $data->money= "0";
         $data->password = $request->password;
         $data->save();
+
+        $data = new Invitation;
+        $data->code = $code;
+        $data->status= "on";
+        $data->idUser= "admin";
+        $data->enrol= "เเพลตฟอร์อย่างเป็นทางการ";
+        $data->percent = "0% (900)";
+        $data->save();
+
         return redirect('/newAdmin')->with('status',"สมัคร Admin สำเสร็จเเล้ว");
     }
+
+    public function moneyUser(Request $request)
+    {
+      $name = $request->search;
+
+             if ($name !== null) {
+               /*  $user = DB::table('bank_accounts')
+                        ->rightJoin('users', 'bank_accounts.id_user', '=', 'users.id')
+                        ->where('is_idadmin', 0)
+                        ->where('category', 'LIKE', '%' . $category . '%');  
+                        ->get();  */
+                    $user = DB::table('users')
+                        ->where('is_idadmin', 0) 
+                        ->where('username', 'LIKE', '%' . $name . '%')
+                        ->get();
+                return view('main.money_user',['user' => $user]);
+            }else{
+
+                 $user = DB::table('users')
+                        ->where('is_idadmin', 0)  
+                        ->get();
+
+            return view('main.money_user',['user' => $user]);
+
+            } 
+   
+    }
+
+    public function addMoney($id)
+    {
+
+        $user = User::find($id);
+        return view('main.addMoney',['user' => $user]);
+    }
+
+  
 
 }

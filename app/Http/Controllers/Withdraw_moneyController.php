@@ -69,31 +69,18 @@ class Withdraw_moneyController extends Controller
 
             $request->validate([
                 'withdrawMoney' => 'required|max:255',
-            ],
-            [
-                'withdrawMoney.required' => 'asdasdasdasd',
             ]);
      
             $data =  new Withdraw_money;
             $data->idUser= $idUser;
+            $data->statusMoney= "0";
             $data->withdrawMoney= $request->withdrawMoney;
             $data->save();
     
         }
       
-        /* ดึง เงินลูกค้า */
- /*        $users = DB::table('users')
-                    ->where('id',$idUser)                
-                    ->get();
-        $money  =  (int)$users[0]->money;
-        $withdrawMoney = (int)$request->withdrawMoney;
-        $moneyPlus   =  $money + $withdrawMoney;
 
-        $flight = User::find($idUser);
-        $flight->name = $moneyPlus;
-        $flight->save(); */
-
-        return redirect('/withdraw-money')->with('status',"ถอนเงินสำเร็จ อยู่ระหว่างการดำเนินการถอน ตรวจสอบ");
+        return redirect('/withdraw')->with('message',"ถอนเงินสำเร็จ อยู่ระหว่างการดำเนินการถอน");
     }
 
     /**
