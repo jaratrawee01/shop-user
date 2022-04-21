@@ -32,7 +32,7 @@ class HomeController extends Controller
                     Session::put('link', $line);
 
 
-      $id =  Auth::user()->is_idadmin;
+      $idStatus =  Auth::user()->is_idadmin;
         $contBank = DB::table('bank_accounts')
             ->where('id_user',Auth::user()->id)  
             ->count(); 
@@ -45,7 +45,7 @@ class HomeController extends Controller
             Session::put('username', $bank[0]->bank_account_name); 
         }
 
-        if ($id === '1') {
+        if ($idStatus === '1') {
 
 
             $name = $request->search;

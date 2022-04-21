@@ -64,16 +64,15 @@ $( "#subscribe-bcak" ).click(function() {
     $("#form-subscribe").hide();
 });
 
-var currentLocation = window.location.pathname;
-if (currentLocation === '/index') {
+/*  var currentLocation = window.location.pathname;
+if (currentLocation === '/shop-user/index') {
     $("#user").addClass("active");
     $("#user-none").show();
-    /* removeClass */
     $("#home").removeClass("active");
     $("#mainPage-none").hide();
     
     $('#clickOffcanvas').trigger('click');
-}
+}   */
 
 function functionCopy() {
     let copy = document.getElementById("codeCopy").innerHTML;
@@ -153,25 +152,30 @@ $( "#destroyId" ).click(function() {
 
 var locationLogin = window.location.pathname;
 
+console.log('locationLogin',locationLogin); 
 
-if (currentLocation === '/login') {
-        $('#onClickRegister').trigger('click');
-        $("#home").addClass("active");
-        $("#location").removeClass("active");
-        $("#gift").removeClass("active");
-        $("#user").removeClass("active");
-        $("#mainPage-none").show();
-        $("#form-login").show();
-        $("#form-subscribe").hide();
-        document.getElementById('messageError').innerHTML = "Username เเละ Password  ไม่ถูกต้อง";
-        
-} 
+ window.onload = (event) => {
+            if (currentLocation === '/shop-user/login') {
+                
+                   $('#onClickRegister').trigger('click');
+                    $("#home").addClass("active");
+                    $("#location").removeClass("active");
+                    $("#gift").removeClass("active");
+                    $("#user").removeClass("active");
+                    $("#mainPage-none").show();
+                    $("#form-login").show();
+                    $("#form-subscribe").hide();
+                    console.log('asdasdas'); 
+            }  
+        };
+
+
 $( function() {
     $( ".datepicker" ).datepicker();
   });
 
 var currentLocation = window.location.pathname;
-if (currentLocation === '/user') {
+if (currentLocation === '/shop-user/user') {
         window.onload = (event) => {
                     $("#user").addClass("active");
                     $("#user-none").show();
@@ -183,7 +187,7 @@ if (currentLocation === '/user') {
 }
 
 var currentLocation = window.location.pathname;
-if (currentLocation === '/set-up') {
+if (currentLocation === '/shop-user/set-up') {
         window.onload = (event) => {
                     $("#user").addClass("active");
                     $("#user-none").show();
@@ -197,19 +201,20 @@ if (currentLocation === '/set-up') {
 
 $( "#reload").click(function() {
 
-
+console.log("reload");
   jQuery.ajax({
-        url: `/reload-money`,
-        method: 'get',
+        url: "/shop-user/reload-money",
+        method: 'post',
         data: {
             "_token": "{{ csrf_token() }}",
             },
         success: function(result){
-
+            console.log("result",result);
             document.getElementById('modeyUser').innerHTML = result; 
                     
             },
         error: function(result){
+            console.log(result);
         }      
     });   
 });

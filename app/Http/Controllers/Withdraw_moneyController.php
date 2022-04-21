@@ -38,13 +38,13 @@ class Withdraw_moneyController extends Controller
     }
     public function reloadMoney()
     {
+
         $idUser =  Auth::user()->id;
         $withdraw = DB::table('users')
                      ->where('id',$idUser)  
                     ->get(); 
       $money = $withdraw[0]->money;
       $moneyBant = number_format( $money , 2 );
-            
             return response()->json($moneyBant);
     }
 

@@ -101,6 +101,31 @@ class GetPageController extends Controller
 
     }
 
+    public function moneyUser(Request $request)
+    {
+      $name = $request->search;
+
+             if ($name !== null) {
+                    $user = DB::table('users')
+                        ->where('is_idadmin', 0) 
+                        ->where('username', 'LIKE', '%' . $name . '%')
+                        ->get();
+                return view('main.money_user',['user' => $user]);
+            }else{
+
+                 $user = DB::table('users')
+                        ->where('is_idadmin', 0)  
+                        ->get();
+
+            return view('main.money_user',['user' => $user]);
+
+            } 
+   
+    }
+
+
+    /* admin */
+
     public function newAdmin()
     {
         return view('auth.registerAdmin');
@@ -133,27 +158,7 @@ class GetPageController extends Controller
         return redirect('/newAdmin')->with('status',"สมัคร Admin สำเสร็จเเล้ว");
     }
 
-    public function moneyUser(Request $request)
-    {
-      $name = $request->search;
-
-             if ($name !== null) {
-                    $user = DB::table('users')
-                        ->where('is_idadmin', 0) 
-                        ->where('username', 'LIKE', '%' . $name . '%')
-                        ->get();
-                return view('main.money_user',['user' => $user]);
-            }else{
-
-                 $user = DB::table('users')
-                        ->where('is_idadmin', 0)  
-                        ->get();
-
-            return view('main.money_user',['user' => $user]);
-
-            } 
-   
-    }
+ 
 
     public function addMoney($id)
     {

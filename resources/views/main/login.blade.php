@@ -22,25 +22,18 @@
                             
                             {{-- login --}}
 
-                            <div class="col-md-8"  id="form-login" style="display:none" >
+                            <div class="col-md-8"  id="form-login" >
                                 <div class="loinText logo-center">
                                         <p>เข้าสู้ระบบ</p>
                                 </div>
                                 <div >
                                     <div>
-                                       <div id="forgot-error" style="display:none" >
-                                        <h5    style="color: red" >ติดต่อฝ่ายบริการลุกค้า</h5>
-                                       </div>
                                         <form method="POST" action="{{ route('login') }}">
                                             @csrf
                                             <div class="row mb-3">
                                                 <div class="col-md-12 " >
-                                                    <input id="email" type="text" class="form-control color55 color56 contact @error('username') is-invalid @enderror" name="username" value="{{ old('email') }}" required placeholder="กรุณากรอกชื่อผู้ใช้" autofocus>
-                                                  {{--   @error('username')
-                                                        <span class="invalid-feedback" role="alert">
-                                                            <strong style="color: red" id="messageError">{{ $message }}</strong>
-                                                        </span>
-                                                    @enderror --}}
+                                                    <input id="username" type="text" class="form-control color55 color56 contact @error('username') is-invalid @enderror" name="username" value="{{ old('email') }}" required placeholder="กรุณากรอกชื่อผู้ใช้" autofocus>
+                    
                                                     <span id="messageError"    class="colorText"></span>
                                                 </div>
                                             </div>
@@ -77,81 +70,6 @@
                                             </div>
                                         </form>
                                     </div>
-                                </div>
-                            </div>
-
-                            {{--ลงทะเบียน  --}}
-
-                            <div class="col-md-8"  id="form-subscribe" style="display:none">
-                                <div class="loinText logo-center">
-                                        <p>ลงทะเบียน</p>
-                                </div>
-                                <div >
-                                    <div>
-                                        <form method="POST" action="{{ route('register') }}">
-                                            @csrf
-                    
-                                            <div class="row mb-3">
-                                                <div class="col-md-12">
-                                                    <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="username" value="{{ old('name') }}" required placeholder="กรุณากรอกชื่อผู้ใช้" autofocus>
-                                                    @error('name')
-                                                        <span class="invalid-feedback" role="alert">
-                                                            <strong>{{ $message }}</strong>
-                                                        </span>
-                                                    @enderror
-                                                </div>
-                                            </div>
-                                            <div class="row mb-3" style="display:none">
-                                                <div class="col-md-12">
-                                                    <input id="email" type="text" class="form-control @error('email') is-invalid @enderror" name="is_admin" value="0" required autocomplete="email">
-                    
-                                                    @error('email')
-                                                        <span class="invalid-feedback" role="alert">
-                                                            <strong>{{ $message }}</strong>
-                                                        </span>
-                                                    @enderror
-                                                </div>
-                                            </div>
-                                            <div class="row mb-3">
-                                                <div class="col-md-12">
-                                                    <input id="email" type="text" class="form-control @error('email') is-invalid @enderror" name="invitation"  required placeholder="กรุณากรอกรหัสคำเชิญ">
-                                                    @error('email')
-                                                        <span class="invalid-feedback" role="alert">
-                                                            <strong>{{ $message }}</strong>
-                                                        </span>
-                                                    @enderror
-                                                </div>
-                                            </div>
-                                            <div class="row mb-3">
-                                                <div class="col-md-12">
-                                                    <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required placeholder="กรุณากรอก password" autocomplete="new-password">
-                    
-                                                    @error('password')
-                                                        <span class="invalid-feedback" role="alert">
-                                                            <strong>{{ $message }}</strong>
-                                                        </span>
-                                                    @enderror
-                                                </div>
-                                            </div>
-                    
-                                            <div class="row mb-3">
-                                                <div class="col-md-12">
-                                                    <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required  placeholder="ยื่นยัน password" autocomplete="new-password">
-                                                </div>
-                                            </div>
-                    
-                                            <div class="row mb-0">
-                                                <div class="d-grid gap-2 logo-center">
-                                                    <button type="submit" class="btn btn-primary">
-                                                        {{ __('ลงทะเบียน') }}
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-                                <div class="logo-center">
-                                    <p class="colorText" id="subscribe-bcak"><- go back</p>
                                 </div>
                             </div>
                         </div>

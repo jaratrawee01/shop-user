@@ -18,10 +18,7 @@
                     </div class="logo-center">
                     <div class="container">
                         <div class="row justify-content-center">
-    
-    
-                            {{-- ลงทะเบียน --}}
-    
+
                             <div class="col-md-8" id="form-subscribe">
                                 <div class="loinText logo-center">
                                     <p>ลงทะเบียน</p>
@@ -43,7 +40,8 @@
                                             </div>
                                             <div class="row mb-3" style="display:none">
                                                 <div class="col-md-12">
-                                                    <input id="email" type="text" class="form-control contact @error('email') is-invalid @enderror" name="is_admin" value="0" required autocomplete="email"> @error('email')
+                                                    <input id="is_admin" type="text" class="form-control contact @error('is_admin') is-invalid @enderror" name="is_admin" value="0" required > 
+                                                    @error('is_admin')
                                                     <span class="invalid-feedback" role="alert">
                                                             <strong>{{ $message }}</strong>
                                                         </span> @enderror
@@ -51,7 +49,7 @@
                                             </div>
                                             <div class="row mb-3">
                                                 <div class="col-md-12">
-                                                    <input id="email" type="text" class="form-control color55 color56  contact @error('invitation') is-invalid @enderror" name="invitation" required placeholder="กรุณากรอกรหัสคำเชิญ"> 
+                                                    <input id="invitation" type="text" class="form-control color55 color56  contact @error('invitation') is-invalid @enderror" name="invitation" required placeholder="กรุณากรอกรหัสคำเชิญ"> 
                                                     @error('invitation')
                                                     <span class="invalid-feedback" role="alert">
                                                             <strong>ไม่พบ รหัสคำเชิญนี้ในระบบ</strong>
@@ -86,10 +84,8 @@
                                 <br>
                                 <div class="logo-center">
                                     <a href="login" class="text-decoration"> 
-                                        <p class="colorText" id="subscribe" style="font-size: 20px"> <- go back</p>
+                                        <p class="colorText"  style="font-size: 20px"> <- go back</p>
                                    </a>
-                                   {{--  <p class="colorText" id="subscribe-bcak">
-                                        <- go back</p> --}}
                                 </div>
                             </div>
                         </div>
