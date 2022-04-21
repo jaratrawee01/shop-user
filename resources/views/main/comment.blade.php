@@ -3,8 +3,11 @@
 @section('content')
 <div class="head logo-center">
     <div class="set-back">
-            <i class="fa-solid fa-arrow-left" style='font-size:28px'></i>
-        </a>
+        <div class="set-back">
+            <a href="{{ URL::to('set-up')}}">
+                <i class="fa-solid fa-arrow-left" style='font-size:28px'></i>
+            </a>
+        </div>
     </div>
     <div class="set-head">
         <p  class="text">ข้อคิดเห็นของฉัน <span>แสดงความคิดเห็น &nbsp;&nbsp;&nbsp;</span></p>
