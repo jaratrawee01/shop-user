@@ -69,11 +69,22 @@
         </div>
     </div>
 </div>
+
+
+
+
+
+@if($accounts == '1')
+<div class="add-bank">
+    <p class="font-size-18">{{$BankAccounts[0]->bank_name}} ( {{$BankAccounts[0]->bank_account_number}})</p>
+</div>
+@else
 <div class="add-bank">
     <a href="{{ URL::to('account')}}">
         <i class="fas fa-plus text">&nbsp;  เพิ่มบัตรธนาคาร</i>
     </a> 
 </div>
+@endif
 <div style="text-align: center">
     @if (session('message'))
         <strong style="color: #fff;font-size: 24px;">{{ session('message') }}</strong>
