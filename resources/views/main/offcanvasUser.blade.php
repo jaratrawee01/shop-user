@@ -80,7 +80,8 @@
         </div>
 
         <div class="offcanvas-body offcanvas-color">
-            <a href="https://line.me/R/ti/p/@154kqcus?from=page" class="text-decoration">
+            @if(Session::has('link'))
+            <a href="{{Session::get('link')}}" class="text-decoration">
                 <div class="bgm">
                     <div class="row ">
                         <div class="col-4 col-sm-4 col-md-4">
@@ -98,6 +99,7 @@
                     </div>
                 </div>
             </a>
+            @endif
         </div>
     </div>
 </div>

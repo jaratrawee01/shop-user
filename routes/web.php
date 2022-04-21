@@ -14,18 +14,45 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
 Route::get('/', function () {
-    return view('welcome');
+    
+    $line = DB::table('link_lines')
+            ->get();
+    $line = $line[0]->link; 
+    Session::put('link', $line);
+
+    return view('welcome'  );
 });
+
 Route::get('index', function () {
+    $line = DB::table('link_lines')
+            ->get();
+    $line = $line[0]->link; 
+    Session::put('link', $line);
+
     return view('welcome');
 })->name('/');
+
 Route::get('user', function () {
+    $line = DB::table('link_lines')
+            ->get();
+    $line = $line[0]->link; 
+    Session::put('link', $line);
+
     return view('welcome');
 })->name('index');
+
 Route::get('set-up', function () {
+    $line = DB::table('link_lines')
+         ->get();
+    $line = $line[0]->link; 
+    Session::put('link', $line);
+    
     return view('welcome');
 })->name('index');
+
+
 Route::get('registerAdmin', function () {
     return view('/auth/registerAdmin');
 });
