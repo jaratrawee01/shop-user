@@ -18,12 +18,30 @@
     </div>
 </div>
 <div class="head text head-height">
-    <img src="{{ asset('/image/avatar90.png') }}" class="avatar" alt="...">
-    <span> &nbsp; {{ Auth::user()->username }} </span>
-    <p class="money-p"> ยอดเงิน: 0.00</p>
-    <p class="font-size">
-        เวลาเติมเงิน จำนวนการเติมเงินของช่องทางการชำระเงินบางช่องจะสุ่มทศนิยม 1 ตำแหน่ง ,โปรดยืนยันเมื่อทำการชำระเงิน
-    </p>
+    <table class="table color-fff font-size">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">จำนวนเงิน</th>
+            <th scope="col">วันที่</th>
+          </tr>
+        </thead>
+        <tbody>
+            @php
+            $i = 1;
+            @endphp
+        @foreach ($addMoney as $money)
+          <tr>
+            <th scope="row"> {{ $i++ }}</th>
+            @php
+                $moneybant =  number_format($money->money,2)
+            @endphp
+            <td>{{ $moneybant}}</td>
+            <td>{{ $money->created_at }}</td>
+          </tr>
+          @endforeach
+        </tbody>
+      </table>
 </div>
 
 

@@ -55,8 +55,16 @@ class GetPageController extends Controller
     }
 
     public function topUpMoney()
+
     {
-        return view('main.top_up_money');
+        $idUser =  Auth::user()->id;
+        $addMoney  =  DB::table('add_money_users')
+                    ->where('id_user',$idUser) 
+                    ->orderBy('id', 'DESC') 
+                    ->get(); 
+
+    
+        return view('main.top_up_money' ,['addMoney'=>$addMoney]);
     }
 
     public function general()
