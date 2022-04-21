@@ -688,9 +688,10 @@
         border-bottom: 1px solid #9b1e14;
     }
     .color1 {
-        color: #fff !important;
+        color: rgb(255, 255, 255) !important;
+        font-size: 35px;
     
     }
     .color2 {
-        color:  #fffc !important;
+        color:  rgba(240, 235, 235, 0.8) !important;
     }
