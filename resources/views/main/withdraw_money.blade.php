@@ -33,6 +33,7 @@
                     <th scope="col">#</th>
                     <th scope="col">ชื่อ-นามสกุล</th>
                     <th scope="col">จำนวนเงิน</th>
+                    <th scope="col">สถานะ</th>
                     <th scope="col">วันที่</th>
                   </tr>
                 </thead>
@@ -42,6 +43,21 @@
                     <th scope="row"> {{ $withdraw->id }}</th>
                     <td> {{ $withdraw->bank_account_name }}</td>
                     <td>{{ $withdraw->withdrawMoney }} ฿</td>
+                    <td>
+                        @if($withdraw->statusMoney == '0')
+                            <p class="font-fff">
+                                    อยู่ระกว่าการรออนุมัติ
+                            </p>
+                        @elseif ($withdraw->statusMoney == '1')
+                            <p class="font-secc-16">
+                                อนุมัติ เรียบร้อย
+                            </p>
+                        @else
+                            <p  class="font-18">
+                                ไม่ผ่านการอนุมัติ
+                            </p>
+                        @endif
+                       </td>
                     <td>{{ $withdraw->created_at }}</td>
                   </tr>
                   @endforeach
@@ -66,7 +82,7 @@
         @csrf
         <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label font-16">จำนวนเงินถอน (B)</label>
-            <input type="0" class="form-control @error('withdrawMoney') is-invalid @enderror" name="withdrawMoney" id="exampleFormControlInput1"
+            <input type="0" class="form-control input-back @error('withdrawMoney') is-invalid @enderror" name="withdrawMoney" id="exampleFormControlInput1"
                 placeholder="จำนวนเงิน บาท" required>
             @if (session('status'))
                     <strong style="color: #fff">{{ session('status') }}</strong>

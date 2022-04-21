@@ -680,3 +680,10 @@
     .set-avatar90 {
         float: right;
     }
+    
+    .input-back {
+        background-color: #9b1e14;
+        color: #fff;
+        border: #9b1e14;
+        border-bottom: 1px solid #9b1e14;
+    }

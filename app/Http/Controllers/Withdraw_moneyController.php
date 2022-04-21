@@ -21,7 +21,8 @@ class Withdraw_moneyController extends Controller
         $idUser =  Auth::user()->id;
         $withdraw = DB::table('bank_accounts')
                     ->rightJoin('withdraw_moneys', 'bank_accounts.id_user', '=', 'withdraw_moneys.idUser')
-                     ->where('withdraw_moneys.idUser',$idUser)  
+                     ->where('withdraw_moneys.idUser',$idUser)
+                     ->orderBy('withdraw_moneys.id', 'DESC')  
                     ->get(); 
 
         return view('main.withdraw_money',['withdraw' => $withdraw]);
