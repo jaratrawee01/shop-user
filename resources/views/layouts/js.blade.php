@@ -197,19 +197,7 @@ if (currentLocation === '/set-up') {
 
 $( "#reload").click(function() {
 
-var currentLocation = window.location.pathname;
-    if (currentLocation) {
-        window.onload = (event) => {
-                    $("#user").addClass("active");
-                    $("#user-none").show();
-                    $("#home").removeClass("active");
-                    $("#mainPage-none").hide();
-    
-            console.log('window.onload');
-        };
-    }
 
-/* 
   jQuery.ajax({
         url: `/reload-money`,
         method: 'get',
@@ -218,14 +206,13 @@ var currentLocation = window.location.pathname;
             },
         success: function(result){
             let modey = result[0].money;
-            let spant = `<span>ยอกเงิน ฿ &nbsp;<i class="fa-solid fa-arrow-rotate-right" id="reload"></i>&nbsp;&nbsp;</span></p>`;
-            let text = `<p  class="text span">${modey} ${spant}`;
+
             document.getElementById('modeyUser').innerHTML = modey;
                     
             },
         error: function(result){
         }      
-    });   */
+    });   
 });
 
 </script>

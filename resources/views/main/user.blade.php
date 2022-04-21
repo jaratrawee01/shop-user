@@ -59,7 +59,8 @@
       </div>
       <br>
       <div class="border-th">
-        <p  class="text span"  id="modeyUser">{{Auth::user()->money}} <span>ยอกเงิน ฿ &nbsp;<i class="fa-solid fa-arrow-rotate-right" id="reload"></i>&nbsp;&nbsp;</span></p>
+        <p  class="text span"  id="modeyUser">{{Auth::user()->money}} </p>
+        <p class="set-money text">ยอกเงิน ฿ &nbsp;<i class="fa-solid fa-arrow-rotate-right" id="reload"></i>&nbsp;&nbsp;</p>
       </div>
       <br>
       <div class="border-th">
