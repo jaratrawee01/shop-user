@@ -24,7 +24,7 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
+    public function index(Request $request)
     {   
 
       $id =  Auth::user()->is_idadmin;
@@ -41,14 +41,30 @@ class HomeController extends Controller
         }
 
         if ($id === '1') {
-            $admin = DB::table('users')
-                ->where('is_idadmin', 1)  
-                ->get(); 
+
+
+            $name = $request->search;
+
+            if ($name !== null) {
+
+                $user = DB::table('users')
+                    ->where('is_idadmin', '0')
+                    ->where('username', 'LIKE', '%' . $name . '%')  
+                    ->get(); 
+        
+                    return view('home',['user'=> $user]);
+
+           }else{
+
             $user = DB::table('users')
-                ->where('is_idadmin', 0)  
-                ->get(); 
-            
-            return view('home',['admin' => $admin,'user'=> $user]);
+                    ->where('is_idadmin', '0')  
+                    ->get(); 
+        
+            return view('home',['user'=> $user]);
+
+           } 
+
+         
         }else{
             return view('welcome');
         }

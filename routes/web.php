@@ -57,6 +57,7 @@ Route::post('/registerAdmin', [App\Http\Controllers\GetPageController::class, 'r
 Route::post('/new-user', [App\Http\Controllers\GetPageController::class, 'newUser']);
 Route::get('/add-money/{id}', [App\Http\Controllers\GetPageController::class, 'addMoney']);
 Route::get('/money-user', [App\Http\Controllers\GetPageController::class, 'moneyUser']);
+Route::get('/admin', [App\Http\Controllers\GetPageController::class, 'admin']);
 Route::post('/money-user', [App\Http\Controllers\GetPageController::class, 'moneyUser']);
 Route::resource('/add-money-user', App\Http\Controllers\addMonetUserController::class);
 Route::resource('/getOutMonetUser', App\Http\Controllers\outMoneyUsersController::class);

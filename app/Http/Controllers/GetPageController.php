@@ -161,6 +161,32 @@ class GetPageController extends Controller
         $user = User::find($id);
         return view('main.addMoney',['user' => $user]);
     }
+    public function admin(Request $request)
+    {
+        $name = $request->search;
+
+        $user = DB::table('users')
+                ->where('is_idadmin', '1')  
+                ->get(); 
+
+            if ($name !== null) {
+                    $user = DB::table('users')
+                        ->where('is_idadmin', '1') 
+                        ->where('username', 'LIKE', '%' . $name . '%')
+                        ->get();
+                        return view('admin.admin' ,['user'=> $user]);
+            }else{
+
+                 $user = DB::table('users')
+                        ->where('is_idadmin', '1')  
+                        ->get();
+
+                  return view('admin.admin' ,['user'=> $user]);
+
+            } 
+
+       
+    }
 
   
 

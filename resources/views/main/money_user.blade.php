@@ -49,7 +49,10 @@
                           {{ $user->invitation }} 
                         </td>
                     <td class="col-3 col-sm-3 col-md-2" >
-                       {{ $user->money }} 
+                      @php
+                      $moneyAll =  number_format( $user->money,2)
+                     @endphp
+                       {{ $moneyAll }} 
                     </td>
                     <td class="col-3 col-sm-3 col-md-2" >
                         <a   href="{{ URL::to('add-money',$user->id)}}" class="btn btn-outline-info">เติมเงิน</a>

@@ -26,6 +26,7 @@
         <thead>
             <tr>
               <th scope="col">#</th>
+              <th scope="col">username</th>
               <th scope="col">ชื่อบัญชี</th>
               <th scope="col">เลขบัญชี</th>
               <th scope="col">ธนาคาร</th>
@@ -42,22 +43,29 @@
                         <td class="col-1 col-sm-1 col-md-1" >
                             {{ $idUser++ }} 
                         </td>
-                        <td class="col-2 col-sm-2 col-md-2">
+                        <td class="col-1 col-sm-1 col-md-1" >
+                          {{ $user->username }} 
+                      </td>
+                        <td class="col- col-sm- col-md-">
                           {{ $user->bank_account_name }} 
                         </td>
-                        <td class="col-2 col-sm-2 col-md-2 ">
+                        <td class="col- col-sm- col-md- ">
                           {{ $user->bank_account_number }} 
                         </td>
-                        <td class="col-2 col-sm-2 col-md-2" >
+                        <td class="col- col-sm- col-md-" >
                             {{ $user->bank_name }} 
                          </td>
-                        <td class="col-1 col-sm-1 col-md-1" >
-                        {{ $user->withdrawMoney }}  บาท  
+                        <td class="col- col-sm- col-md-" >
+                         @php
+                          $withdrawMoney =  number_format( $user->withdrawMoney,2);
+                          $moneyAll =  number_format( $user->money,2)
+                         @endphp
+                        {{ $withdrawMoney }}  บาท  
                         </td>
-                        <td class="col-2 col-sm-2 col-md-2" >
-                            {{ $user->money }}  บาท  
+                        <td class="col- col-sm- col-md-" >
+                            {{ $moneyAll }}  บาท  
                             </td>
-                    <td class="col-2 col-sm-2 col-md-2" >
+                    <td class="col- col-sm- col-md-" >
 
                         <a   href="{{ URL::to('outMoney',$user->id,)}}" class="btn btn-outline-info"  onclick="if(confirm('ยืนยันการอนุมัติ การถอน')) return true; else return false;" >อนุมัติ</a>&nbsp;&nbsp;
                         <a   href="{{ URL::to('remove',$user->id)}}" class="btn btn-outline-secondary" onclick="if(confirm('ไม่อนุมัติการถอน')) return true; else return false;">ไม่อนุมัติ</a>

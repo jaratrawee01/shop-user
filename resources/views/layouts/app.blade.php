@@ -46,6 +46,9 @@
                             <a class="nav-link" href="{{ URL::to('newAdmin')}}" >เพิ่ม Admin</a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link" href="{{ URL::to('admin')}}" >Admin</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link" href="{{ URL::to('link-line')}}"  >Link-Line</a>
                         </li>       
                       </ul>

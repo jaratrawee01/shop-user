@@ -17,7 +17,7 @@ class BankAccountController extends Controller
     public function index()
     {
 
-        return view('main.bank');
+      
  
     }
 
@@ -74,7 +74,11 @@ class BankAccountController extends Controller
      */
     public function edit($id)
     {
-        //
+        $account = DB::table('bank_accounts')
+                ->where('id_user',$id)
+                ->get(); 
+
+        return view('admin.edit_bank_accounts' ,['account'=> $account]);
     }
 
     /**
@@ -86,7 +90,13 @@ class BankAccountController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $Withdraw = Bank_account::find($id);
+        $Withdraw->bank_account_name = $request->bank_account_name; 
+        $Withdraw->bank_account_number = $request->bank_account_number; 
+        $Withdraw->bank_name = $request->bank_name; 
+        $Withdraw->save();
+
+        return redirect('/home')->with('status',"เเก้ไข บัญชีธรานคาร $request->bank_account_name สำเร็จ ");
     }
 
     /**
