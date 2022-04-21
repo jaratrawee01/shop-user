@@ -34,6 +34,7 @@ return array(
     'App\\Models\\AddMoneyUsers' => $baseDir . '/app/Models/AddMoneyUsers.php',
     'App\\Models\\Bank_account' => $baseDir . '/app/Models/Bank_account.php',
     'App\\Models\\Invitation' => $baseDir . '/app/Models/Invitation.php',
+    'App\\Models\\LinkLine' => $baseDir . '/app/Models/LinkLine.php',
     'App\\Models\\User' => $baseDir . '/app/Models/User.php',
     'App\\Models\\Withdraw_money' => $baseDir . '/app/Models/Withdraw_money.php',
     'App\\Providers\\AppServiceProvider' => $baseDir . '/app/Providers/AppServiceProvider.php',

@@ -543,6 +543,7 @@ class ComposerStaticInitb7c495ddcc9d9d119bcfc4948683dc77
         'App\\Models\\AddMoneyUsers' => __DIR__ . '/../..' . '/app/Models/AddMoneyUsers.php',
         'App\\Models\\Bank_account' => __DIR__ . '/../..' . '/app/Models/Bank_account.php',
         'App\\Models\\Invitation' => __DIR__ . '/../..' . '/app/Models/Invitation.php',
+        'App\\Models\\LinkLine' => __DIR__ . '/../..' . '/app/Models/LinkLine.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
         'App\\Models\\Withdraw_money' => __DIR__ . '/../..' . '/app/Models/Withdraw_money.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',

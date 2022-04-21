@@ -43,8 +43,11 @@
                           <a class="nav-link" href="{{ URL::to('getOutMonetUser')}}" >ถอนเงิน</a>
                         </li> 
                         <li class="nav-item">
-                            <a class="nav-link" href="newAdmin" >เพิ่ม Admin</a>
-                          </li>     
+                            <a class="nav-link" href="{{ URL::to('newAdmin')}}" >เพิ่ม Admin</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ URL::to('link-line')}}"  >Link-Line</a>
+                        </li>       
                       </ul>
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">

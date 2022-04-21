@@ -44,9 +44,6 @@
       </table>
 </div>
 
-
-
-
 <div>
     <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRightTopUp" aria-labelledby="offcanvasRightLabelTopUp">
         <div class="offcanvas-header head ">
