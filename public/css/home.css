@@ -687,3 +687,10 @@
         border: #9b1e14;
         border-bottom: 1px solid #9b1e14;
     }
+    .color1 {
+        color: #fff !important;
+    
+    }
+    .color2 {
+        color:  #fffc !important;
+    }
