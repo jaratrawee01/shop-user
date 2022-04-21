@@ -25,7 +25,16 @@ class Withdraw_moneyController extends Controller
                      ->orderBy('withdraw_moneys.id', 'DESC')  
                     ->get(); 
 
-        return view('main.withdraw_money',['withdraw' => $withdraw]);
+        $accounts  =  DB::table('bank_accounts')
+                    ->where('bank_accounts.id_user',$idUser)  
+                    ->count();
+
+        $BankAccounts  =  DB::table('bank_accounts')
+                    ->where('bank_accounts.id_user',$idUser)  
+                    ->get(); 
+    
+
+        return view('main.withdraw_money',['withdraw' => $withdraw ,'accounts' => $accounts ,  'accounts' =>$accounts, 'BankAccounts' =>  $BankAccounts]);
     }
     public function reloadMoney()
     {
