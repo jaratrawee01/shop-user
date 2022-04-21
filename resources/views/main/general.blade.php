@@ -10,8 +10,9 @@
     </div>
     <div class="set-head">
         <p  class="text">ตั้งค่าทั่วไป</p>
-    </div><br>
-     <div class="border-th">
+    </div>
+    <br>
+     <div class="border-th input-back ">
         <p  class="text span">สลับสาย<span>global Fast1 &nbsp;&nbsp;&nbsp;</span></p>
  </div>
 </div>

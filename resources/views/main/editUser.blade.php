@@ -21,7 +21,7 @@
             @csrf
             <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label font-16">username</label>
-                <input type="0" class="form-control @error('name') is-invalid @enderror" name="name" id="exampleFormControlInput1"
+                <input type="0" class="form-control input-back @error('name') is-invalid @enderror" name="name" id="exampleFormControlInput1"
                     placeholder="username" required>
                 @error('name')
                     <span class="invalid-feedback" role="alert">
@@ -31,7 +31,7 @@
             </div>
             <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label font-16">new password</label>
-                <input type="0" class="form-control @error('pass') is-invalid @enderror" name="pass" id="exampleFormControlInput1"
+                <input type="0" class="form-control input-back @error('pass') is-invalid @enderror" name="pass" id="exampleFormControlInput1"
                     placeholder="new password" required>
                 @error('pass')
                     <span class="invalid-feedback" role="alert">
