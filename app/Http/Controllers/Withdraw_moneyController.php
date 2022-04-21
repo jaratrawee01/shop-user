@@ -33,7 +33,10 @@ class Withdraw_moneyController extends Controller
         $withdraw = DB::table('users')
                      ->where('id',$idUser)  
                     ->get(); 
-            return response()->json($withdraw);
+      $money = $withdraw[0]->money;
+      $moneyBant = number_format( $money , 2 );
+            
+            return response()->json($moneyBant);
     }
 
     /**

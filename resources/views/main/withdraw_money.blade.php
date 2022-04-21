@@ -42,7 +42,10 @@
                   <tr>
                     <th scope="row"> {{ $withdraw->id }}</th>
                     <td> {{ $withdraw->bank_account_name }}</td>
-                    <td>{{ $withdraw->withdrawMoney }} ฿</td>
+                    @php
+                        $money =  number_format(Auth::user()->money,2)
+                    @endphp
+                    <td>{{ $money}} ฿</td>
                     <td>
                         @if($withdraw->statusMoney == '0')
                             <p class="font-fff">
@@ -93,9 +96,13 @@
                 </span>
             @enderror
         </div>
+        @php
+         $money =  number_format(Auth::user()->money,2)
+        @endphp
         <div class="font-size">
             @if (Auth::user()->money !== "0")
-                ยอดเงิน: {{Auth::user()->money}} ฿
+           
+                ยอดเงิน: {{$money}} ฿
             @else
                 ยอดเงิน: 0.00 ฿
             @endif

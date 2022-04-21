@@ -205,9 +205,8 @@ $( "#reload").click(function() {
             "_token": "{{ csrf_token() }}",
             },
         success: function(result){
-            let modey = result[0].money;
 
-            document.getElementById('modeyUser').innerHTML = modey;
+            document.getElementById('modeyUser').innerHTML = result; 
                     
             },
         error: function(result){
