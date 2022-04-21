@@ -315,9 +315,9 @@
     }
     
     .login {
-        background-image: url("/image/login-bg.png") !important;
+        background-image: url("../image/login-bg.png") !important;
     }
-    
+
     .logo-center {
         text-align: center;
     }
@@ -632,7 +632,7 @@
     }
     
     .contact {
-        border-radius: 20px;
+        border-radius: 20px !important;
     }
     
     .serve {
@@ -694,4 +694,29 @@
     }
     .color2 {
         color:  rgba(240, 235, 235, 0.82) !important;
+    }
+    .color55 {
+        background-color: rgb(129, 192, 192);
+        color: rgb(253, 251, 251);
+        border: rgb(129, 192, 192);
+    }
+    .color56:focus{
+        background-color: rgb(129, 192, 192);
+        color: rgb(253, 251, 251);
+        border: rgb(129, 192, 192);
+    }
+    .color57 {
+        background-color: #cacacc;
+        border: rgb(106, 35, 36);
+        
+    }
+    .color58:active {
+        background-color: #2ebf0e;
+        border: rgb(250, 250, 250);
+        color: rgb(106, 35, 36);
+    }
+    .color58:hover {
+        background-color: #cacacc;
+        border: rgb(106, 35, 36);
+        
     }

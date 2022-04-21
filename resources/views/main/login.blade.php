@@ -34,8 +34,8 @@
                                         <form method="POST" action="{{ route('login') }}">
                                             @csrf
                                             <div class="row mb-3">
-                                                <div class="col-md-12">
-                                                    <input id="email" type="text" class="form-control @error('username') is-invalid @enderror" name="username" value="{{ old('email') }}" required placeholder="กรุณากรอกชื่อผู้ใช้" autofocus>
+                                                <div class="col-md-12 " >
+                                                    <input id="email" type="text" class="form-control color55 color56 contact @error('username') is-invalid @enderror" name="username" value="{{ old('email') }}" required placeholder="กรุณากรอกชื่อผู้ใช้" autofocus>
                                                   {{--   @error('username')
                                                         <span class="invalid-feedback" role="alert">
                                                             <strong style="color: red" id="messageError">{{ $message }}</strong>
@@ -47,7 +47,7 @@
                                             <div class="row mb-3">
                     
                                                 <div class="col-md-12">
-                                                    <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required placeholder="กรุณากรอก password" autocomplete="current-password">
+                                                    <input id="password" type="password" class="form-control color55 color56 contact @error('password') is-invalid @enderror" name="password" required placeholder="กรุณากรอก password" autocomplete="current-password">
                     
                                                     @error('password')
                                                         <span class="invalid-feedback" role="alert">
@@ -69,8 +69,8 @@
                                             </div>
                                            
                                             <div class="row mb-0 ">
-                                                <div class="d-grid gap-2 logo-center">
-                                                    <button type="submit" class="btn btn-primary">
+                                                <div class="d-grid gap-2 logo-center ">
+                                                    <button type="submit" class="btn btn-primary contact color57 color58 ">
                                                         {{ __('เข้าสู่ระบบ') }}
                                                     </button>
                                                 </div>

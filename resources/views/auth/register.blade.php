@@ -33,7 +33,7 @@
     
                                             <div class="row mb-3">
                                                 <div class="col-md-12">
-                                                    <input id="username" type="text" class="form-control @error('username') is-invalid @enderror" name="username" value="{{ old('name') }}" required placeholder="กรุณากรอกชื่อผู้ใช้" autofocus> 
+                                                    <input id="username" type="text" class="form-control  color55 color56  contact  @error('username') is-invalid @enderror" name="username" value="{{ old('name') }}" required placeholder="กรุณากรอกชื่อผู้ใช้" autofocus> 
                                                     @error('username')
                                                         <span class="invalid-feedback" role="alert">
                                                             <strong>{{ $message }}</strong>
@@ -43,7 +43,7 @@
                                             </div>
                                             <div class="row mb-3" style="display:none">
                                                 <div class="col-md-12">
-                                                    <input id="email" type="text" class="form-control @error('email') is-invalid @enderror" name="is_admin" value="0" required autocomplete="email"> @error('email')
+                                                    <input id="email" type="text" class="form-control contact @error('email') is-invalid @enderror" name="is_admin" value="0" required autocomplete="email"> @error('email')
                                                     <span class="invalid-feedback" role="alert">
                                                             <strong>{{ $message }}</strong>
                                                         </span> @enderror
@@ -51,7 +51,7 @@
                                             </div>
                                             <div class="row mb-3">
                                                 <div class="col-md-12">
-                                                    <input id="email" type="text" class="form-control @error('invitation') is-invalid @enderror" name="invitation" required placeholder="กรุณากรอกรหัสคำเชิญ"> 
+                                                    <input id="email" type="text" class="form-control color55 color56  contact @error('invitation') is-invalid @enderror" name="invitation" required placeholder="กรุณากรอกรหัสคำเชิญ"> 
                                                     @error('invitation')
                                                     <span class="invalid-feedback" role="alert">
                                                             <strong>ไม่พบ รหัสคำเชิญนี้ในระบบ</strong>
@@ -60,7 +60,7 @@
                                             </div>
                                             <div class="row mb-3">
                                                 <div class="col-md-12">
-                                                    <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required placeholder="กรุณากรอก password" autocomplete="new-password"> @error('password')
+                                                    <input id="password" type="password" class="form-control color55 color56  contact @error('password') is-invalid @enderror" name="password" required placeholder="กรุณากรอก password" autocomplete="new-password"> @error('password')
                                                     <span class="invalid-feedback" role="alert">
                                                             <strong>{{ $message }}</strong>
                                                         </span> @enderror
@@ -69,13 +69,13 @@
     
                                             <div class="row mb-3">
                                                 <div class="col-md-12">
-                                                    <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required placeholder="ยื่นยัน password" autocomplete="new-password">
+                                                    <input id="password-confirm" type="password" class="form-control color55 color56  contact" name="password_confirmation" required placeholder="ยื่นยัน password" autocomplete="new-password">
                                                 </div>
                                             </div>
     
                                             <div class="row mb-0">
                                                 <div class="d-grid gap-2 logo-center">
-                                                    <button type="submit" class="btn btn-primary">
+                                                    <button type="submit" class="btn btn-primary contact  color57 color58">
                                                         {{ __('ลงทะเบียน') }}
                                                     </button>
                                                 </div>
