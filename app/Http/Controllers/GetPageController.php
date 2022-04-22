@@ -19,7 +19,14 @@ class GetPageController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+    
+        $this->middleware('check', [
+            'only' => [
+                'newAdmin',
+                'addMoney',
+                'admin' // Could add bunch of more methods too
+            ]
+        ]); 
     }
 
     /**
@@ -125,6 +132,9 @@ class GetPageController extends Controller
 
 
     /* admin */
+    
+   
+
 
     public function newAdmin()
     {
@@ -166,6 +176,7 @@ class GetPageController extends Controller
         $user = User::find($id);
         return view('main.addMoney',['user' => $user]);
     }
+
     public function admin(Request $request)
     {
         $name = $request->search;

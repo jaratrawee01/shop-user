@@ -17,7 +17,7 @@ class checkadmin
      */
     public function handle(Request $request, Closure $next)
     {
-       /*  dd("request", gettype(Auth::user()->is_idadmin)); */
+        
         if(Auth::user()->is_idadmin === '1') {
           
             return $next($request);

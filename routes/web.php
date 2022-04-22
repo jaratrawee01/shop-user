@@ -59,7 +59,7 @@ Route::get('registerAdmin', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->middleware('check')->name('home');
+
 Route::get('/getInvitation', [App\Http\Controllers\InvitationController::class, 'index']);
 Route::get('/createCode', [App\Http\Controllers\InvitationController::class, 'create']);
 Route::post('/save-code', [App\Http\Controllers\InvitationController::class, 'store']);
@@ -94,7 +94,13 @@ Route::resource('/withdraw', App\Http\Controllers\Withdraw_moneyController::clas
 Route::post('/reload-money', [App\Http\Controllers\Withdraw_moneyController::class,'reloadMoney']);
 
 /* admin */
-Route::resource('/add-money-user', App\Http\Controllers\addMonetUserController::class);
-Route::resource('/link-line', App\Http\Controllers\LinkLineController::class);
-Route::resource('/add-money-user', App\Http\Controllers\addMonetUserController::class);
-Route::resource('/getOutMonetUser', App\Http\Controllers\outMoneyUsersController::class);
+
+Route::group(['middleware'=>'check'],function () {
+    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+    Route::resource('/add-money-user', App\Http\Controllers\addMonetUserController::class);
+    Route::resource('/link-line', App\Http\Controllers\LinkLineController::class);
+    Route::resource('/add-money-user', App\Http\Controllers\addMonetUserController::class);
+    Route::resource('/getOutMonetUser', App\Http\Controllers\outMoneyUsersController::class);
+    
+});
+
