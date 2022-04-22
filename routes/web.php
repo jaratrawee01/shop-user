@@ -59,7 +59,7 @@ Route::get('registerAdmin', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->middleware('check')->name('home');
 Route::get('/getInvitation', [App\Http\Controllers\InvitationController::class, 'index']);
 Route::get('/createCode', [App\Http\Controllers\InvitationController::class, 'create']);
 Route::post('/save-code', [App\Http\Controllers\InvitationController::class, 'store']);

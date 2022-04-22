@@ -26,6 +26,8 @@ class HomeController extends Controller
      */
     public function index(Request $request)
     {   
+
+
         $line = DB::table('link_lines')
                     ->get();
                     $line = $line[0]->link; 
