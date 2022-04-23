@@ -87,9 +87,6 @@
             <tbody>
               <tr class="img-shop">
                 <td class="col-3 col-sm-3 col-md-6 " >
-                  <div class="main" id="section1">
-                    <a href="#section2">section</a>
-                  </div>
                    <p class="income" id="section1" href="#section9">aasdasd<br>LAZADA <span>รายได้&nbsp; <span class="income-baht">565&nbsp; </span>฿</p>
                 </td>
               </tr>

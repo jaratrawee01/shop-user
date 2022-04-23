@@ -742,7 +742,6 @@
     .animation-box {
         width: 100px;
         height: 100px;
-        background: rgb(16, 241, 0);
         position: relative;
         /*  animation: mymove 5s infinite; */
         -webkit-animation-name: move;
@@ -777,3 +776,7 @@
             bottom: 350px;
         }
     }
+    .down12{
+        margin-top: 15px;
+    }
+   
