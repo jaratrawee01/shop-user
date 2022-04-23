@@ -12,7 +12,7 @@
         <div class="row justify-content-center">
             <div class="col-md-8 " >
                 <div class="logo-center">
-                    <img src="{{asset('/image/logo_pdd.png')}}" class="logo-img"  alt="...">
+                    <img src="{{asset('/image/8XdGol.png')}}" class="logo-img"  alt="...">
                 </div>
                 <br>
                <div class="logo-center">

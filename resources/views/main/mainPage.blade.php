@@ -1,16 +1,16 @@
 <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
         <div class="carousel-item  active ">
-        <img src="{{asset('/image/img11.jpeg')}}" class="image" alt="...">
+        <img src="{{asset('/image/B-1.png')}}" class="image" alt="...">
       </div>
       <div class="carousel-item ">
-        <img src="{{asset('/image/img12.jpeg')}}" class="image" alt="...">
+        <img src="{{asset('/image/B-2.png')}}" class="image" alt="...">
       </div>
       <div class="carousel-item ">
-        <img src="{{asset('/image/img13.jpeg')}}" class="image" alt="...">
+        <img src="{{asset('/image/B-3.png')}}" class="image" alt="...">
       </div>
       <div class="carousel-item ">
-        <img src="{{asset('/image/img14.jpeg')}}" class="image" alt="...">
+        <img src="{{asset('/image/B-4.png')}}" class="image" alt="...">
       </div>
       <div class="carousel-item ">
         <img src="{{asset('/image/img15.jpeg')}}" class="image" alt="...">
