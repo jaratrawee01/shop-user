@@ -46,23 +46,23 @@
             <div class="border-th">
                 <img src="{{ asset('/image/daili1.svg') }}" class="report-manu" alt="...">
                 &nbsp;&nbsp;
-                <a href="getInvitation" class="font-size margin-top text-decoration">โปรโหมดตัวแทน</a>
+                <a href="getInvitation" class="font-size  text-decoration margin-top-ge">โปรโหมดตัวแทน</a>
 
             </div>
             <div class="border-th">
                 <img src="{{ asset('/image/daili3.svg') }}" class="report-manu" alt="...">
                 &nbsp;&nbsp;
-                <a href="commission" class="font-size margin-top text-decoration">ค่าคอมมิชชั่นตัวแทน</a>
+                <a href="commission" class="font-size margin-top-ge  text-decoration">ค่าคอมมิชชั่นตัวแทน</a>
             </div>
             <div class="border-th">
                 <img src="{{ asset('/image/daili3.svg') }}" class="report-manu" alt="...">
                 &nbsp;&nbsp;
-                <a href="walk-thousand" class="font-size margin-top text-decoration">รายละเอียดการเดิมพันของตัวแทน</a>
+                <a href="walk-thousand" class="font-size margin-top-ge text-decoration">รายละเอียดการเดิมพันของตัวแทน</a>
             </div>
             <div class="border-th">
                 <img src="{{ asset('/image/daili3.svg') }}" class="report-manu" alt="...">
                 &nbsp;&nbsp;
-                <a href="all-tems" class="font-size margin-top text-decoration">บันทึกรายการตัวแทน</a>
+                <a href="all-tems" class="font-size margin-top-ge text-decoration">บันทึกรายการตัวแทน</a>
             </div>
         </div>
     </div>

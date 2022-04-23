@@ -393,6 +393,12 @@
     }
     
     .margin-top {
+        margin-top: 18px;
+        position: absolute;
+    }
+    
+    .margin-top-ge {
+        margin-top: 25px;
         position: absolute;
     }
     

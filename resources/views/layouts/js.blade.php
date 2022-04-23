@@ -155,7 +155,7 @@ var locationLogin = window.location.pathname;
 console.log('locationLogin',locationLogin); 
 
  window.onload = (event) => {
-            if (currentLocation === '/shop-user/login') {
+            if (currentLocation === '/shop-userNew/public/login') {
                 
                    $('#onClickRegister').trigger('click');
                     $("#home").addClass("active");
@@ -175,7 +175,7 @@ $( function() {
   });
 
 var currentLocation = window.location.pathname;
-if (currentLocation === '/shop-user/user') {
+if (currentLocation === '/public/user') {
         window.onload = (event) => {
                     $("#user").addClass("active");
                     $("#user-none").show();
@@ -187,7 +187,7 @@ if (currentLocation === '/shop-user/user') {
 }
 
 var currentLocation = window.location.pathname;
-if (currentLocation === '/shop-user/set-up') {
+if (currentLocation === '/set-up') {
         window.onload = (event) => {
                     $("#user").addClass("active");
                     $("#user-none").show();
@@ -203,7 +203,7 @@ $( "#reload").click(function() {
 
 console.log("reload");
   jQuery.ajax({
-        url: "/shop-user/reload-money",
+        url: "/reload-money",
         method: 'post',
         data: {
             "_token": "{{ csrf_token() }}",

@@ -23,6 +23,7 @@ class User extends Authenticatable
         'is_idadmin',
         'money',
         'password',
+        'website_status'
     ];
 
     /**

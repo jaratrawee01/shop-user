@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('username');
             $table->string('invitation');
             $table->string('is_idadmin');
+            $table->string('website_status')->nullable();
             $table->string('money')->nullable();
             $table->string('password');
             $table->rememberToken();

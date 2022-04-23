@@ -24,7 +24,8 @@ class GetPageController extends Controller
             'only' => [
                 'newAdmin',
                 'addMoney',
-                'admin' // Could add bunch of more methods too
+                'admin',
+                'moneyUser' // Could add bunch of more methods too
             ]
         ]); 
     }
@@ -154,7 +155,7 @@ class GetPageController extends Controller
         $data->invitation= $code;
         $data->is_idadmin= "1";
         $data->money= "0";
-        $data->password = $request->password;
+        $data->password = Hash::make($request->password);
         $data->save();
 
         $data = new Invitation;

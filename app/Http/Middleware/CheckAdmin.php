@@ -17,11 +17,17 @@ class checkadmin
      */
     public function handle(Request $request, Closure $next)
     {
-        
-        if(Auth::user()->is_idadmin === '1') {
-          
-            return $next($request);
-        }
-         return redirect('/');
+         
+       if (Auth::user()) {
+            if(Auth::user()->is_idadmin === '1') {
+            
+                return $next($request);
+            }else{
+                return redirect('/');
+            }
+       }else{
+            return redirect('/');
+       }
+         
     }
 }
