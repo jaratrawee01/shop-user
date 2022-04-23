@@ -63,7 +63,7 @@ class InvitationController extends Controller
         }else{
             $status = "off";
         }
-       $data = new Invitation;
+        $data = new Invitation;
         $data->code = $code;
         $data->status= $status;
         $data->idUser= $id;
